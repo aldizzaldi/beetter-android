@@ -24,9 +24,10 @@
                 android:id="@+id/circleImageView"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginEnd="32dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="15dp"
                 android:src="@drawable/ic_avatar_svgrepo_com"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/home_member_name"
@@ -77,12 +78,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/rocket"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <view
+                android:layout_width="320dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="80dp"
+                android:background="#f2f2f2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </view>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
