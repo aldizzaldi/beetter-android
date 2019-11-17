@@ -8,19 +8,19 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.beetter.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_daily_report"
         android:name="com.example.beetter.ui.dashboard.DailyReportFragment"
-        android:label="@string/title_dashboard"
+        android:label="Daily Report"
         tools:layout="@layout/fragment_daily_report" />
 
     <fragment
         android:id="@+id/navigation_report_productivity"
         android:name="com.example.beetter.ui.notifications.ReportProductivityFragment"
-        android:label="@string/title_notifications"
+        android:label="Report Productivity"
         tools:layout="@layout/fragment_report_productivity" />
     <fragment
         android:id="@+id/navigation_team"
