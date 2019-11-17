@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.beetter.R;
 
-public class NotificationsFragment extends Fragment {
+public class ReportProductivityFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private ReportProductivityViewModel reportProductivityViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
+        reportProductivityViewModel =
+                ViewModelProviders.of(this).get(ReportProductivityViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_report_productivity, container, false);
         final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(this, new Observer<String>() {
+        reportProductivityViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
