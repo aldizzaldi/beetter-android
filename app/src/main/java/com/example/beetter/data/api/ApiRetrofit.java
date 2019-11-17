@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiRetrofit {
-    public static final String BASE_URL = "";
+    public static final String BASE_URL = "https://better123.herokuapp.com/api/";
     private static Retrofit retrofit;
 
     public static Retrofit getInstance(){
