@@ -30,9 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#456989"
-            app:queryHint="Search." />
+            app:queryHint="Search" />
     </RelativeLayout>
-
 
     <!-- Layout for content is here. This can be a RelativeLayout  -->
 </RelativeLayout>
