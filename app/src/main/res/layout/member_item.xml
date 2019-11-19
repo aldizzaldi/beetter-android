@@ -56,7 +56,7 @@
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/online"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintEnd_toStartOf="@+id/home_percent_productivities"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -85,7 +85,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <view
+            <View
                 android:layout_width="320dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="80dp"
@@ -95,7 +95,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-            </view>
+            </View>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,15 +34,15 @@ public class LoginActivity extends AppCompatActivity {
         password = (EditText)findViewById(R.id.password);
         btnLogin = (Button)findViewById(R.id.buttonLogin);
 
-        txtEmail = email.getText().toString();
-        txtPassword = password.getText().toString();
-
 
         final IApiEndPoint apiEndPoint = ApiRetrofit.getInstance().create(IApiEndPoint.class);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                txtEmail = email.getText().toString();
+                txtPassword = password.getText().toString();
+
                 apiEndPoint.login(txtEmail,txtPassword).enqueue(new Callback<LoginResponse>() {
                     @Override
                     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<LoginResponse> call, Throwable t) {
-                        Toast.makeText(getApplicationContext(),"gagal login",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),t.getMessage(),Toast.LENGTH_SHORT).show();
 
                     }
                 });
