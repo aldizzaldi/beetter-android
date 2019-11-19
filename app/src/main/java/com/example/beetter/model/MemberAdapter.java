@@ -24,7 +24,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.MemberView
     @Override
     public MemberViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.fragment_home, parent, false);
+        View view = layoutInflater.inflate(R.layout.member_item, parent, false);
         return new MemberViewHolder(view);
     }
 
@@ -32,7 +32,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.MemberView
     @Override
     public void onBindViewHolder(@NonNull MemberViewHolder holder, int position) {
         holder.txtName.setText(dataList.get(position).getName());
-        holder.txtPercent.setText(dataList.get(position).getName() + "% productivities");
+        holder.txtPercent.setText(dataList.get(position).getPercentproductivity() + "% productivities");
     }
 
     @Override
