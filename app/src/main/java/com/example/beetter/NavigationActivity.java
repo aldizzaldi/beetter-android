@@ -41,8 +41,8 @@ public class NavigationActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         memberAdapter = new MemberAdapter(memberArrayList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(NavigationActivity.this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(memberAdapter);
+//        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView.setAdapter(memberAdapter);
 
     }
 
