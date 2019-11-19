@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 ////        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         // Sets the Toolbar to act as the ActionBar for this Activity window.
-        // Make sure the toolbar exists in the activity and is not null
+        // Make sure the toolbar_main exists in the activity and is not null
         setSupportActionBar(toolbar);
 
     }
