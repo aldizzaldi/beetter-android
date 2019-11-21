@@ -24,15 +24,15 @@ public class MainActivity extends AppCompatActivity {
 //        setContentView(R.layout.daily_report);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//
+////        getSupportActionBar().setDisplayShowHomeEnabled(true);
+////        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+//        getSupportActionBar().setDisplayUseLogoEnabled(true);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setTitle("");
+//        toolbar.setLogo(R.drawable.ic_logoskuywhite);
 //        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
-        toolbar.setLogo(R.drawable.ic_logoskuywhite);
-        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
 
     }
     public boolean onCreateOptionsMenu(Menu menu) {
