@@ -22,9 +22,16 @@
         android:name="com.example.beetter.ui.reportproductivity.ReportProductivityFragment"
         android:label="Report Productivity"
         tools:layout="@layout/fragment_report_productivity" />
-    <fragment
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_team"-->
+<!--        android:name="com.example.beetter.ui.team.TeamFragment"-->
+<!--        android:label="Team"-->
+<!--        tools:layout="@layout/fragment_team" />-->
+
+    <activity
         android:id="@+id/navigation_team"
         android:name="com.example.beetter.ui.team.TeamFragment"
-        android:label="Team"
-        tools:layout="@layout/fragment_team" />
+        android:label="HEHE"
+        tools:layout="@layout/splash_screen"/>
 </navigation>

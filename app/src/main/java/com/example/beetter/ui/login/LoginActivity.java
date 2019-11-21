@@ -1,5 +1,6 @@
 package com.example.beetter.ui.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.beetter.NavigationActivity;
 import com.example.beetter.R;
 import com.example.beetter.data.api.ApiRetrofit;
 import com.example.beetter.data.api.IApiEndPoint;
@@ -48,7 +50,9 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                         token = response.body().getToken();
-                        Toast.makeText(getApplicationContext(),"berhasil login",Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(getApplicationContext(),"berhasil login",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), NavigationActivity.class);
+                        startActivity(intent);
                     }
 
                     @Override
