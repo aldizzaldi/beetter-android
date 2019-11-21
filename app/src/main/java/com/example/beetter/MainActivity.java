@@ -24,20 +24,15 @@ public class MainActivity extends AppCompatActivity {
 //        setContentView(R.layout.daily_report);
         setContentView(R.layout.activity_main);
 
-//        ActionBar actionBar = getSupportActionBar(); // or getActionBar();
-//        getSupportActionBar().setTitle("My new title"); // set the top title
-//        String title = actionBar.getTitle().toString(); // get the title
-//        actionBar.hide(); // or even hide the actionbar
+//        Toolbar toolbar = findViewById(R.id.toolbar);
 //
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
-//        getSupportActionBar().setDisplayUseLogoEnabled(true);
-//
+////        getSupportActionBar().setDisplayShowHomeEnabled(true);
 ////        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        // Sets the Toolbar to act as the ActionBar for this Activity window.
-        // Make sure the toolbar_main exists in the activity and is not null
-        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayUseLogoEnabled(true);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setTitle("");
+//        toolbar.setLogo(R.drawable.ic_logoskuywhite);
+//        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
 
     }
     public boolean onCreateOptionsMenu(Menu menu) {

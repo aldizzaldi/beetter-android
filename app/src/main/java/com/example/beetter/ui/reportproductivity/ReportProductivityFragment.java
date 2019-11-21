@@ -1,4 +1,4 @@
-package com.example.beetter.ui.notifications;
+package com.example.beetter.ui.reportproductivity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,20 +16,12 @@ import com.example.beetter.R;
 
 public class ReportProductivityFragment extends Fragment {
 
-    private ReportProductivityViewModel reportProductivityViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        reportProductivityViewModel =
-                ViewModelProviders.of(this).get(ReportProductivityViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_report_productivity, container, false);
         final TextView textView = root.findViewById(R.id.text_notifications);
-        reportProductivityViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

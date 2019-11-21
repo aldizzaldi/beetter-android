@@ -1,5 +1,6 @@
-package com.example.beetter.model;
+package com.example.beetter.model.response;
 
+import com.example.beetter.model.DataTeam;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;

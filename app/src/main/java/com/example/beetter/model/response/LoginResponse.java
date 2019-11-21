@@ -1,4 +1,4 @@
-package com.example.beetter.model;
+package com.example.beetter.model.response;
 
 import com.google.gson.annotations.SerializedName;
 

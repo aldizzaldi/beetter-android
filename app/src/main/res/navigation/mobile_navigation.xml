@@ -13,18 +13,25 @@
 
     <fragment
         android:id="@+id/navigation_daily_report"
-        android:name="com.example.beetter.ui.dashboard.DailyReportFragment"
+        android:name="com.example.beetter.ui.dailyreport.DailyReportFragment"
         android:label="Daily Report"
         tools:layout="@layout/fragment_daily_report" />
 
     <fragment
         android:id="@+id/navigation_report_productivity"
-        android:name="com.example.beetter.ui.notifications.ReportProductivityFragment"
+        android:name="com.example.beetter.ui.reportproductivity.ReportProductivityFragment"
         android:label="Report Productivity"
         tools:layout="@layout/fragment_report_productivity" />
-    <fragment
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_team"-->
+<!--        android:name="com.example.beetter.ui.team.TeamFragment"-->
+<!--        android:label="Team"-->
+<!--        tools:layout="@layout/fragment_team" />-->
+
+    <activity
         android:id="@+id/navigation_team"
         android:name="com.example.beetter.ui.team.TeamFragment"
-        android:label="Team"
-        tools:layout="@layout/fragment_team" />
+        android:label="HEHE"
+        tools:layout="@layout/splash_screen"/>
 </navigation>

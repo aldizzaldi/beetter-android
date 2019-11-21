@@ -13,24 +13,15 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.beetter.R;
-import com.example.beetter.ui.team.TeamViewModel;
 
 public class TeamFragment extends Fragment {
 
-    private TeamViewModel teamViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        teamViewModel =
-                ViewModelProviders.of(this).get(TeamViewModel.class);
         View root = inflater.inflate(R.layout.fragment_team, container, false);
         final TextView textView = root.findViewById(R.id.text_team);
-        teamViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

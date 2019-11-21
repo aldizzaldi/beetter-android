@@ -1,10 +1,9 @@
 package com.example.beetter.data.api;
 
 import com.example.beetter.model.DataTeam;
-import com.example.beetter.model.GetJoinedTeamResponse;
-import com.example.beetter.model.GetUserResponse;
-import com.example.beetter.model.LoginResponse;
-import com.example.beetter.model.TestResponse;
+import com.example.beetter.model.response.GetJoinedTeamResponse;
+import com.example.beetter.model.response.GetUserResponse;
+import com.example.beetter.model.response.LoginResponse;
 import com.example.beetter.model.User;
 
 import java.util.List;
@@ -16,10 +15,6 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface IApiEndPoint {
-
-    @GET("test")
-    Call<TestResponse> test(
-    );
 
     @FormUrlEncoded
     @POST("login")
