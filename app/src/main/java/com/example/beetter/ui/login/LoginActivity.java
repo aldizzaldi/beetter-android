@@ -1,4 +1,4 @@
-package com.example.beetter;
+package com.example.beetter.ui.login;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +9,10 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.beetter.R;
 import com.example.beetter.data.api.ApiRetrofit;
 import com.example.beetter.data.api.IApiEndPoint;
-import com.example.beetter.model.LoginResponse;
+import com.example.beetter.model.response.LoginResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;

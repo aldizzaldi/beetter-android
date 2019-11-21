@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_daily_report"
-        android:name="com.example.beetter.ui.dashboard.DailyReportFragment"
+        android:name="com.example.beetter.ui.dailyreport.DailyReportFragment"
         android:label="Daily Report"
         tools:layout="@layout/fragment_daily_report" />
 
     <fragment
         android:id="@+id/navigation_report_productivity"
-        android:name="com.example.beetter.ui.notifications.ReportProductivityFragment"
+        android:name="com.example.beetter.ui.reportproductivity.ReportProductivityFragment"
         android:label="Report Productivity"
         tools:layout="@layout/fragment_report_productivity" />
     <fragment

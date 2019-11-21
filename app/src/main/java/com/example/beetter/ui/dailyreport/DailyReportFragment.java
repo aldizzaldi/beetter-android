@@ -1,4 +1,4 @@
-package com.example.beetter.ui.dashboard;
+package com.example.beetter.ui.dailyreport;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,20 +16,12 @@ import com.example.beetter.R;
 
 public class DailyReportFragment extends Fragment {
 
-    private DailyReportViewModel dailyReportViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dailyReportViewModel =
-                ViewModelProviders.of(this).get(DailyReportViewModel.class);
         View root = inflater.inflate(R.layout.fragment_daily_report, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
-        dailyReportViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }
