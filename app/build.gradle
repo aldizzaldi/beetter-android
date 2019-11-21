@@ -54,4 +54,7 @@ dependencies {
     //Butterknife
     implementation 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+
+    //Sliding Up
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
 }
