@@ -14,6 +14,7 @@ public class Search extends AppCompatActivity {
         setContentView(R.layout.toolbar_main);
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_logoskuywhite);
         setSupportActionBar(toolbar);
     }
 

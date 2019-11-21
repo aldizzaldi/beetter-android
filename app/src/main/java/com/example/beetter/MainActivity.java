@@ -26,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
 //        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         toolbar.setLogo(R.drawable.ic_logoskuywhite);
-////        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
 
     }
     public boolean onCreateOptionsMenu(Menu menu) {
