@@ -16,53 +16,51 @@ import com.example.beetter.data.api.ApiRetrofit;
 import com.example.beetter.data.api.IApiEndPoint;
 import com.example.beetter.model.response.LoginResponse;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends AppCompatActivity {
-    private String token;
-    private EditText email;
-    private EditText password;
-    private String txtEmail;
-    private String txtPassword;
-    private Button btnLogin;
+public class LoginActivity extends AppCompatActivity implements ILoginVIew{
+
+    @BindView(R.id.username)
+    EditText email;
+
+    @BindView(R.id.password)
+    EditText password;
+
+    @BindView(R.id.btnLogin)
+    Button btnLogin;
+
+    private LoginPresenter presenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+        ButterKnife.bind(this);
 
-        email = (EditText)findViewById(R.id.username);
-        password = (EditText)findViewById(R.id.password);
-        btnLogin = (Button)findViewById(R.id.buttonLogin);
+        presenter = new LoginPresenter(this);
+    }
 
+    @OnClick(R.id.btnLogin)
+    public void onBtnLoginClicked(){
+        String username = email.getText().toString();
+        String pwd = password.getText().toString();
 
-        final IApiEndPoint apiEndPoint = ApiRetrofit.getInstance().create(IApiEndPoint.class);
+        presenter.doLogin(username,pwd);
+    }
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtEmail = email.getText().toString();
-                txtPassword = password.getText().toString();
+    @Override
+    public void moveToTeamList() {
+        Intent intent = new Intent(getApplicationContext(), NavigationActivity.class);
+        startActivity(intent);
+    }
 
-                apiEndPoint.login(txtEmail,txtPassword).enqueue(new Callback<LoginResponse>() {
-                    @Override
-                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                        token = response.body().getToken();
-                      //  Toast.makeText(getApplicationContext(),"berhasil login",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), NavigationActivity.class);
-                        startActivity(intent);
-                    }
-
-                    @Override
-                    public void onFailure(Call<LoginResponse> call, Throwable t) {
-                        Toast.makeText(getApplicationContext(),t.getMessage(),Toast.LENGTH_SHORT).show();
-
-                    }
-                });
-            }
-        });
-
+    @Override
+    public void showMessage(String message) {
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 }
