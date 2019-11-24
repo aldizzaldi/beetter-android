@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import com.example.beetter.NavigationActivity;
+import com.example.beetter.SharedPrefUtils;
 import com.example.beetter.data.api.ApiRetrofit;
 import com.example.beetter.data.api.IApiEndPoint;
 import com.example.beetter.model.response.LoginResponse;
@@ -29,6 +30,9 @@ public class LoginPresenter {
                 String token;
                 token = response.body().getToken();
                 view.moveToTeamList();
+                SharedPrefUtils.setStringSharedPref("token", "Bearer " + token);
+                SharedPrefUtils.setStringSharedPref("email", txtEmail);
+//                view.showMessage(token);
             }
 
             @Override

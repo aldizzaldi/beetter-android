@@ -1,7 +1,8 @@
+package com.example.beetter;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import java.util.List;
 import java.util.Set;
 
 public class SharedPrefUtils {

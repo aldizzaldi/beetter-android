@@ -1,16 +1,18 @@
 package com.example.beetter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+
+import java.util.Set;
 
 public class SlidingUp extends BottomSheetDialogFragment {
     private SlidingUpListener mListener;

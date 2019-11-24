@@ -12,6 +12,7 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface IApiEndPoint {
@@ -25,14 +26,14 @@ public interface IApiEndPoint {
 
     @GET("user")
     Call<GetUserResponse> getLogin(
+            @Header("Authorization") String header,
             @Field("user") User user
     );
 
     @FormUrlEncoded
     @POST("team/team-list")
     Call<GetJoinedTeamResponse> getJoinedTeam(
-            @Field("success") Boolean status,
-            @Field("dataTeam") List<DataTeam> dataTeam
+            @Header("Authorization") String header
     );
 
 }
