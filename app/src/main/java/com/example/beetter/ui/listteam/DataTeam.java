@@ -1,5 +1,7 @@
-package com.example.beetter.model;
+package com.example.beetter.ui.listteam;
 
+import com.example.beetter.model.DetailsTeam;
+import com.example.beetter.model.User;
 import com.google.gson.annotations.SerializedName;
 
 public class DataTeam {

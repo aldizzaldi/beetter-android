@@ -15,6 +15,7 @@ import com.example.beetter.R;
 import com.example.beetter.data.api.ApiRetrofit;
 import com.example.beetter.data.api.IApiEndPoint;
 import com.example.beetter.model.response.LoginResponse;
+import com.example.beetter.ui.listteam.ListTeamActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -55,7 +56,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginVIew{
 
     @Override
     public void moveToTeamList() {
-        Intent intent = new Intent(getApplicationContext(), NavigationActivity.class);
+        Intent intent = new Intent(getApplicationContext(), ListTeamActivity.class);
         startActivity(intent);
     }
 

@@ -65,10 +65,6 @@ public class SharedPrefUtils {
         return sharedPreferences.getBoolean(key, defValue);
     }
 
-    public static Set<String> getSetStringSharedPref(String key, Set<String> defValue) {
-        return sharedPreferences.getStringSet(key, defValue);
-    }
-
     public static void removeSavedPref(String key) {
         editor.remove(key);
         editor.apply();

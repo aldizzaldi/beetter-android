@@ -28,4 +28,19 @@ public class SplashScreen extends AppCompatActivity implements ISplashScreenVIew
             }
         }, DELAY);
     }
+
+    @Override
+    public void moveToLogin() {
+
+    }
+
+    @Override
+    public void moveToHome() {
+
+    }
+
+    @Override
+    public void loading() {
+
+    }
 }

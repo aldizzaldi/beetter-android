@@ -50,7 +50,6 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.MemberView
             txtName = (TextView) itemView.findViewById(R.id.home_member_name);
             txtPercent = (TextView) itemView.findViewById(R.id.home_percent_productivities);
         }
-
     }
 
 }

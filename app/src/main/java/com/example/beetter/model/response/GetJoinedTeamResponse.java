@@ -1,15 +1,15 @@
 package com.example.beetter.model.response;
 
-import com.example.beetter.model.DataTeam;
+import com.example.beetter.ui.listteam.DataTeam;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class GetJoinedTeamResponse {
     @SerializedName("success")
     Boolean success;
     @SerializedName("dataTeam")
-    List<DataTeam> dataTeams;
+    ArrayList<DataTeam> dataTeams;
 
     public Boolean getSuccess() {
         return success;
@@ -19,11 +19,11 @@ public class GetJoinedTeamResponse {
         this.success = success;
     }
 
-    public List<DataTeam> getDataTeams() {
+    public ArrayList<DataTeam> getDataTeams() {
         return dataTeams;
     }
 
-    public void setDataTeams(List<DataTeam> dataTeams) {
+    public void setDataTeams(ArrayList<DataTeam> dataTeams) {
         this.dataTeams = dataTeams;
     }
 }

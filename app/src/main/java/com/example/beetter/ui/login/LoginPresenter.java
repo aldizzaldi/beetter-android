@@ -28,10 +28,10 @@ public class LoginPresenter {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 String token;
-                token = response.body().getToken();
-                view.moveToTeamList();
-                SharedPrefUtils.setStringSharedPref("token", "Bearer " + token);
+                token = "Bearer" + response.body().getToken();
+                SharedPrefUtils.setStringSharedPref("token", token);
                 SharedPrefUtils.setStringSharedPref("email", txtEmail);
+                view.moveToTeamList();
 //                view.showMessage(token);
             }
 
