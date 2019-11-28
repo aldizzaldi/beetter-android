@@ -7,18 +7,22 @@
     android:background="#f2f2f2"
     tools:context=".MainActivity">
 
+    <include
+        android:id="@+id/toolnbar"
+        layout="@layout/toolbar_main" />
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
         app:cardBackgroundColor="@android:color/white"
         app:cardElevation="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolnbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -71,9 +75,9 @@
         android:id="@+id/recyclerView2"
         android:layout_width="409dp"
         android:layout_height="729dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView9"
         tools:listitem="@layout/daily_report_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
