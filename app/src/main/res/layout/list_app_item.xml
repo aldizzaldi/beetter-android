@@ -42,7 +42,6 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
                 android:text="5h 2m 3s"
                 android:textSize="9sp"
                 app:layout_constraintBottom_toBottomOf="parent"

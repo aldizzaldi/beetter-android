@@ -58,13 +58,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="277dp"
                 android:layout_marginBottom="14dp"
                 android:text="Project Manager : Buddy"
                 android:textColor="#2C3144"
                 android:textSize="9sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view2" />
 

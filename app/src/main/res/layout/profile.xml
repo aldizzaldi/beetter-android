@@ -6,13 +6,17 @@
     android:layout_height="wrap_content"
     android:background="#F2F2F2">
 
+    <include
+        android:id="@+id/toolnbar"
+        layout="@layout/toolbar_main" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolnbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -41,11 +45,11 @@
         android:id="@+id/cardView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="32dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolnbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -111,7 +115,7 @@
             tools:layout_editor_absoluteX="18dp"
             tools:layout_editor_absoluteY="0dp">
 
-            <view
+            <View
                 android:id="@+id/view3"
                 android:layout_width="1dp"
                 android:layout_height="170dp"
@@ -188,7 +192,7 @@
 
             <TextView
                 android:id="@+id/txtDOB"
-                android:layout_width="61dp"
+                android:layout_width="wrap_content"
                 android:layout_height="21dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="16dp"
@@ -209,8 +213,8 @@
 
             <TextView
                 android:id="@+id/txtGender"
-                android:layout_width="61dp"
-                android:layout_height="21dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="32dp"
