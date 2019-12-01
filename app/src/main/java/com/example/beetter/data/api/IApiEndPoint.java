@@ -1,6 +1,7 @@
 package com.example.beetter.data.api;
 
 import com.example.beetter.model.response.GetJoinedTeamResponse;
+import com.example.beetter.model.response.GetTeamMembers;
 import com.example.beetter.model.response.GetUserResponse;
 import com.example.beetter.model.response.LoginResponse;
 import com.example.beetter.model.User;
@@ -31,5 +32,13 @@ public interface IApiEndPoint {
     Call<GetJoinedTeamResponse> getJoinedTeam(
             @Header("Authorization") String header
     );
+
+    @POST("team/member")
+    Call<GetTeamMembers> getTeamMembers(
+            @Header("Authorization") String header
+    );
+
+     
+
 
 }
