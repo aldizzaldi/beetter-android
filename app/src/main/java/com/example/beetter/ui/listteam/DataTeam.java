@@ -6,23 +6,23 @@ import com.google.gson.annotations.SerializedName;
 
 public class DataTeam {
     @SerializedName("details")
-    DetailsTeam detailsTeam;
+    DetailsTeam[] detailsTeam;
     @SerializedName("manager")
-    User user;
+    User[] user;
 
     public DetailsTeam getDetailsTeam() {
-        return detailsTeam;
+        return detailsTeam[0];
     }
 
-    public void setDetailsTeam(DetailsTeam detailsTeam) {
+    public void setDetailsTeam(DetailsTeam[] detailsTeam) {
         this.detailsTeam = detailsTeam;
     }
 
     public User getUser() {
-        return user;
+        return user[0];
     }
 
-    public void setUser(User user) {
+    public void setUser(User[] user) {
         this.user = user;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.beetter.ui.listteam;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.beetter.NavigationActivity;
 import com.example.beetter.R;
 
 import butterknife.BindView;
@@ -35,8 +37,14 @@ public class ListTeamAdapter extends RecyclerView.Adapter<ListTeamAdapter.ListTe
 
     @Override
     public void onBindViewHolder(@NonNull ListTeamViewHolder holder, int position) {
-        holder.listTeamNameTeam.setText(dataTeamsList.get(position).detailsTeam.getRoomName());
-        holder.listTeamNamePM.setText(dataTeamsList.get(position).user.getName());
+        holder.listTeamNameTeam.setText(dataTeamsList.get(position).getDetailsTeam().getRoomName());
+        holder.listTeamNamePM.setText(dataTeamsList.get(position).getUser().getName());
+        holder.itemView.setOnClickListener(view -> {
+            int idTeam = dataTeamsList.get(position).getDetailsTeam().getId();
+            Intent intent = new Intent(context, NavigationActivity.class);
+            intent.putExtra("id_team", idTeam);
+            context.startActivity(intent);
+        });
     }
 
     @Override

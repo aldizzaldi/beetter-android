@@ -10,10 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beetter.R;
+import com.example.beetter.model.User;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class ListTeamActivity extends AppCompatActivity implements IListTeamView{
 
@@ -22,11 +24,13 @@ public class ListTeamActivity extends AppCompatActivity implements IListTeamView
 
     private ListTeamPresenter presenter;
     private ListTeamAdapter ListTeamAdapter;
+    private ArrayList dataTeams = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_team);
+        ButterKnife.bind(this, this);
 
         presenter = new ListTeamPresenter(this);
         presenter.getListTeam();
@@ -44,6 +48,6 @@ public class ListTeamActivity extends AppCompatActivity implements IListTeamView
 
     @Override
     public void showError(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
 }
