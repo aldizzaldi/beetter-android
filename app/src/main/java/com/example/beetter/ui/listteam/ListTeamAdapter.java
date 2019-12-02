@@ -38,7 +38,7 @@ public class ListTeamAdapter extends RecyclerView.Adapter<ListTeamAdapter.ListTe
     @Override
     public void onBindViewHolder(@NonNull ListTeamViewHolder holder, int position) {
         holder.listTeamNameTeam.setText(dataTeamsList.get(position).getDetailsTeam().getRoomName());
-        holder.listTeamNamePM.setText(dataTeamsList.get(position).getUser().getName());
+        holder.listTeamNamePM.setText("Project Manager : " + dataTeamsList.get(position).getUser().getName());
         holder.itemView.setOnClickListener(view -> {
             int idTeam = dataTeamsList.get(position).getDetailsTeam().getId();
             Intent intent = new Intent(context, NavigationActivity.class);
