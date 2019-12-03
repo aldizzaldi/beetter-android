@@ -1,22 +1,14 @@
 package com.example.beetter;
 
 import android.os.Bundle;
-import android.view.Menu;
 
-import com.example.beetter.model.Member;
-import com.example.beetter.model.MemberAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
 
 public class NavigationActivity extends AppCompatActivity {
 

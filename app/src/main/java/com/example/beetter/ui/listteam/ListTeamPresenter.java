@@ -10,7 +10,6 @@ import com.example.beetter.data.api.IApiEndPoint;
 import com.example.beetter.model.response.GetJoinedTeamResponse;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,7 +18,6 @@ import retrofit2.Response;
 public class ListTeamPresenter {
     private IListTeamView view;
     private final IApiEndPoint apiEndPoint = ApiRetrofit.getInstance().create(IApiEndPoint.class);
-  //  private ArrayList<DataTeam> dataTeams;
 
     public ListTeamPresenter(IListTeamView view) {
         this.view = view;
@@ -34,7 +32,7 @@ public class ListTeamPresenter {
 
                  if(response.isSuccessful()){
                      Log.e("hiya", "response e berhasil lo");
-                    ArrayList<DataTeam> dataTeams = new ArrayList<DataTeam>();
+                    ArrayList<DataTeam> dataTeams = new ArrayList<>();
                      for(int i = 0 ; i < response.body().getDataTeams().size(); i++){
                          if(email.equalsIgnoreCase(response.body().getDataTeams().get(i).getUser().getEmail())){
                              dataTeams.add(response.body().getDataTeams().get(i));

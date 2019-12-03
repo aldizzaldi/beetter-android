@@ -1,8 +1,9 @@
 package com.example.beetter.data.api;
 
-import com.example.beetter.model.response.GetDailyReport;
+import com.example.beetter.model.response.GetDailyReportResponse;
 import com.example.beetter.model.response.GetJoinedTeamResponse;
-import com.example.beetter.model.response.GetTeamMembers;
+//import com.example.beetter.model.response.GetTeamMembers;
+import com.example.beetter.model.response.GetListMemberInTeamResponse;
 import com.example.beetter.model.response.GetTrackingReport;
 import com.example.beetter.model.response.GetUserResponse;
 import com.example.beetter.model.response.LoginResponse;
@@ -14,7 +15,6 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
-import retrofit2.http.Path;
 
 public interface IApiEndPoint {
 
@@ -36,20 +36,30 @@ public interface IApiEndPoint {
             @Header("Authorization") String header
     );
 
-    @POST("team/member")
-    Call<GetTeamMembers> getTeamMembers(
-            @Header("Authorization") String header
-    );
+//    @POST("team/member")
+//    Call<GetTeamMembers> getTeamMembers(
+//            @Header("Authorization") String header
+//    );
 
-    @POST("daily-tracking-report/overal-per-member-team/")
+    @FormUrlEncoded
+    @POST("daily-tracking-report/overal-per-member-team")
     Call<GetTrackingReport> getTrackReport(
             @Header("Authorization") String header,
             @Field("id_team") int id,
             @Field("date") String date
     );
 
+    @FormUrlEncoded
     @POST("daily-scrum-report/list")
-    Call<GetDailyReport> getDailyReport(
+    Call<GetDailyReportResponse> getDailyReport(
+            @Header("Authorization") String header,
+            @Field("id_team") int id,
+            @Field("date") String date
+    );
+
+    @FormUrlEncoded
+    @POST("daily-tracking-report/overal-per-member-team")
+    Call<GetListMemberInTeamResponse> getListMemberInTeam(
             @Header("Authorization") String header,
             @Field("id_team") int id,
             @Field("date") String date

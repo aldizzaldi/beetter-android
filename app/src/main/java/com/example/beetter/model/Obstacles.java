@@ -9,6 +9,26 @@ public class Obstacles {
     int idDailyReport;
     @SerializedName("content")
     String masalah;
+    @SerializedName("created_at")
+    String tanggalDibuat;
+    @SerializedName("updated_at")
+    String tanggalDiupdate;
+
+    public String getTanggalDibuat() {
+        return tanggalDibuat;
+    }
+
+    public void setTanggalDibuat(String tanggalDibuat) {
+        this.tanggalDibuat = tanggalDibuat;
+    }
+
+    public String getTanggalDiupdate() {
+        return tanggalDiupdate;
+    }
+
+    public void setTanggalDiupdate(String tanggalDiupdate) {
+        this.tanggalDiupdate = tanggalDiupdate;
+    }
 
     public int getId() {
         return id;

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beetter.NavigationActivity;
 import com.example.beetter.R;
+import com.example.beetter.SharedPrefUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,8 +42,8 @@ public class ListTeamAdapter extends RecyclerView.Adapter<ListTeamAdapter.ListTe
         holder.listTeamNamePM.setText("Project Manager : " + dataTeamsList.get(position).getUser().getName());
         holder.itemView.setOnClickListener(view -> {
             int idTeam = dataTeamsList.get(position).getDetailsTeam().getId();
+            SharedPrefUtils.setIntSharedPref("id_team", idTeam);
             Intent intent = new Intent(context, NavigationActivity.class);
-            intent.putExtra("id_team", idTeam);
             context.startActivity(intent);
         });
     }

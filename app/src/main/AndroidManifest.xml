@@ -22,6 +22,7 @@
         <activity android:name=".ui.login.LoginActivity"/>
         <activity android:name=".NavigationActivity"/>
         <activity android:name=".ui.listteam.ListTeamActivity"/>
+        <activity android:name=".ui.team.TeamFragment"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

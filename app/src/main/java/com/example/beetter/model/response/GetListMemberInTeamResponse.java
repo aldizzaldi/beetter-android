@@ -5,18 +5,18 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-public class GetTrackingReport {
+public class GetListMemberInTeamResponse {
     @SerializedName("success")
-    Boolean success;
+    Boolean succes;
     @SerializedName("data")
     ArrayList<ReportProductivity> reportProductivities;
 
-    public Boolean getSuccess() {
-        return success;
+    public Boolean getSucces() {
+        return succes;
     }
 
-    public void setSuccess(Boolean success) {
-        this.success = success;
+    public void setSucces(Boolean succes) {
+        this.succes = succes;
     }
 
     public ArrayList<ReportProductivity> getReportProductivities() {

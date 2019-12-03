@@ -14,6 +14,7 @@ import com.example.beetter.R;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class DailyReportAdapter extends RecyclerView.Adapter<DailyReportAdapter.DailyReportViewHolder> {
     private ArrayList<DailyReport> dailyReportList;
@@ -43,7 +44,7 @@ public class DailyReportAdapter extends RecyclerView.Adapter<DailyReportAdapter.
 
     @Override
     public int getItemCount() {
-        return 0;
+        return (dailyReportList != null) ? dailyReportList.size() : 0;
     }
 
     public class DailyReportViewHolder extends RecyclerView.ViewHolder{
@@ -64,6 +65,7 @@ public class DailyReportAdapter extends RecyclerView.Adapter<DailyReportAdapter.
 
         public DailyReportViewHolder(@NonNull View itemView) {
             super(itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

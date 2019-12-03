@@ -15,6 +15,16 @@ public class Daily {
     String yangAkanDikerjakan;
     @SerializedName("created_at")
     String tanggalDibuat;
+    @SerializedName("updated_at")
+    String tanggalDiupdate;
+
+    public String getTanggalDiupdate() {
+        return tanggalDiupdate;
+    }
+
+    public void setTanggalDiupdate(String tanggalDiupdate) {
+        this.tanggalDiupdate = tanggalDiupdate;
+    }
 
     public String getTanggalDibuat() {
         return tanggalDibuat;

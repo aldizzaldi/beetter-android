@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     android:background="#f2f2f2">
 
-    <include
-        android:id="@+id/toolnbar"
-        layout="@layout/toolbar_main" />
+<!--    <include-->
+<!--        android:id="@+id/toolnbar"-->
+<!--        layout="@layout/toolbar_main" />-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView9"

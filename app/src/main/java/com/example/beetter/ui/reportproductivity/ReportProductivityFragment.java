@@ -19,7 +19,7 @@ public class ReportProductivityFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_report_productivity, container, false);
+        View root = inflater.inflate(R.layout.report_productivity, container, false);
         final TextView textView = root.findViewById(R.id.text_notifications);
 
         return root;

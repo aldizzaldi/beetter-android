@@ -1,4 +1,4 @@
-package com.example.beetter.model;
+package com.example.beetter.model.dummy;
 
 public class Member {
 

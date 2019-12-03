@@ -9,29 +9,29 @@
         android:id="@+id/navigation_home"
         android:name="com.example.beetter.ui.home.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/home" />
 
     <fragment
         android:id="@+id/navigation_daily_report"
         android:name="com.example.beetter.ui.dailyreport.DailyReportFragment"
         android:label="Daily Report"
-        tools:layout="@layout/fragment_daily_report" />
+        tools:layout="@layout/daily_report" />
 
     <fragment
         android:id="@+id/navigation_report_productivity"
         android:name="com.example.beetter.ui.reportproductivity.ReportProductivityFragment"
         android:label="Report Productivity"
-        tools:layout="@layout/fragment_report_productivity" />
+        tools:layout="@layout/report_productivity" />
 
-<!--    <fragment-->
+    <fragment
+        android:id="@+id/navigation_team"
+        android:name="com.example.beetter.ui.team.TeamFragment"
+        android:label="Team"
+        tools:layout="@layout/team" />
+
+<!--    <activity-->
 <!--        android:id="@+id/navigation_team"-->
 <!--        android:name="com.example.beetter.ui.team.TeamFragment"-->
 <!--        android:label="Team"-->
-<!--        tools:layout="@layout/fragment_team" />-->
-
-    <activity
-        android:id="@+id/navigation_team"
-        android:name="com.example.beetter.ui.team.TeamFragment"
-        android:label="HEHE"
-        tools:layout="@layout/splash_screen"/>
+<!--        tools:layout="@layout/splash_screen" />-->
 </navigation>

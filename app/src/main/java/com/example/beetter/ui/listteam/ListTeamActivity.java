@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beetter.R;
-import com.example.beetter.model.User;
 
 import java.util.ArrayList;
 
@@ -24,7 +23,7 @@ public class ListTeamActivity extends AppCompatActivity implements IListTeamView
 
     private ListTeamPresenter presenter;
     private ListTeamAdapter ListTeamAdapter;
-    private ArrayList dataTeams = new ArrayList<>();
+//    private ArrayList dataTeams = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
