@@ -6,56 +6,50 @@
     android:layout_height="wrap_content"
     android:background="#F2F2F2">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#7D7D80">
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="33dp"
-                android:layout_height="33dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@android:drawable/ic_menu_close_clear_cancel"
-                android:textAlignment="center"
-                android:textSize="10sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
+    <include
+        android:id="@+id/toolnbar"
+        layout="@layout/toolbar_main" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:cardBackgroundColor="@android:color/transparent"
+        app:cardBackgroundColor="#f2f2f2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolnbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:textAlignment="center"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/cover"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#7D7D80"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circleImageView"
                 android:layout_width="125dp"
                 android:layout_height="125dp"
+                android:layout_marginTop="32dp"
                 android:elevation="100dp"
                 android:src="@drawable/ic_avatar_svgrepo_com"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -111,12 +105,12 @@
             tools:layout_editor_absoluteX="18dp"
             tools:layout_editor_absoluteY="0dp">
 
-            <view
+            <View
                 android:id="@+id/view3"
                 android:layout_width="1dp"
                 android:layout_height="170dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginEnd="70dp"
+                android:layout_marginEnd="80dp"
                 android:background="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -160,7 +154,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Buddy99"
+                android:text="Buddy"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/view3"
                 app:layout_constraintTop_toBottomOf="@+id/viewName" />
@@ -188,11 +182,11 @@
 
             <TextView
                 android:id="@+id/txtDOB"
-                android:layout_width="61dp"
+                android:layout_width="wrap_content"
                 android:layout_height="21dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="16dp"
-                android:text="Date of birth"
+                android:text="Date of Birth"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
@@ -209,8 +203,8 @@
 
             <TextView
                 android:id="@+id/txtGender"
-                android:layout_width="61dp"
-                android:layout_height="21dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="32dp"

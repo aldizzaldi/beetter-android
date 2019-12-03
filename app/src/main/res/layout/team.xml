@@ -15,10 +15,10 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <view
+    <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#8D4747" />
+        android:background="#BBBBBB" />
 
     <Button
         android:id="@+id/btnExitTeam"

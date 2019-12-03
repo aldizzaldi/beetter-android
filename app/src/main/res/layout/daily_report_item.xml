@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -22,24 +23,18 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="298dp"
+            android:layout_height="wrap_content"
             android:elevation="200dp">
 
             <ImageView
                 android:id="@+id/memberImage"
-                android:layout_width="66dp"
-                android:layout_height="69dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="24dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
                 android:src="@drawable/ic_avatar_svgrepo_com"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.06"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.027">
+                app:layout_constraintTop_toTopOf="parent">
 
             </ImageView>
 
@@ -47,28 +42,20 @@
                 android:id="@+id/submitionTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="58dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="413dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="24dp"
                 android:text="08.30"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.809"
-                app:layout_constraintStart_toEndOf="@+id/memberName"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/report1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="168dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/daily_report_whatisdone"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.187"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/memberImage" />
 
@@ -76,35 +63,30 @@
                 android:id="@+id/report2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/daily_report_problem"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/valueReport1"
-                app:layout_constraintVertical_bias="0.112" />
+                app:layout_constraintTop_toBottomOf="@+id/valueReport1" />
 
             <TextView
                 android:id="@+id/memberName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
                 android:text="Wifda Muna"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.131"
                 app:layout_constraintStart_toEndOf="@+id/memberImage"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.207" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/valueReport1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="5dp"
                 android:text="Membuat CDM"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -114,44 +96,36 @@
                 android:id="@+id/valueReport2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="32dp"
                 android:text="Menyelesaikan CDM dan memulai pembuatan PDM"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.296"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/report3"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/report3" />
 
             <TextView
                 android:id="@+id/valueReport3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="5dp"
                 android:text="Tool yang dipakai terkadang ngebug"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/report2"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/report2" />
 
             <TextView
                 android:id="@+id/report3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="64dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/daily_report_whatsnext"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.178"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/valueReport3"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/valueReport3" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
