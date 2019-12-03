@@ -1,6 +1,7 @@
 package com.example.beetter.ui.login;
 
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.beetter.NavigationActivity;
@@ -28,11 +29,17 @@ public class LoginPresenter {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 String token;
-                token = "Bearer" + response.body().getToken();
-                SharedPrefUtils.setStringSharedPref("token", token);
-                SharedPrefUtils.setStringSharedPref("email", txtEmail);
-                view.moveToTeamList();
-//                view.showMessage(token);
+
+                if(response.isSuccessful()){
+                    token = "Bearer " + response.body().getToken();
+                    SharedPrefUtils.setStringSharedPref("token", token);
+                    SharedPrefUtils.setStringSharedPref("email", txtEmail);
+                    Log.e("hiyaLogin", "response e berhasil lo");
+                    view.moveToTeamList();
+                }
+                else{
+                    view.showMessage("Password atau username salah");
+                }
             }
 
             @Override
@@ -40,6 +47,5 @@ public class LoginPresenter {
                 view.showMessage(t.getMessage());
             }
         });
-
     }
 }
