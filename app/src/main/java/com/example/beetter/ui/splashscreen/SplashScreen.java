@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.beetter.NavigationActivity;
 import com.example.beetter.R;
 import com.example.beetter.SharedPrefUtils;
 import com.example.beetter.ui.login.LoginActivity;
@@ -22,6 +24,16 @@ public class SplashScreen extends AppCompatActivity implements ISplashScreenVIew
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+//                if(SharedPrefUtils.getStringSharedPref("token", "null").equalsIgnoreCase("null")){
+//                    Intent intent = new Intent(SplashScreen.this, LoginActivity.class);
+//                    SplashScreen.this.startActivity(intent);
+//                    SplashScreen.this.finish();
+//                }
+//                else{
+//                    Intent intent1 = new Intent(SplashScreen.this, NavigationActivity.class);
+//                    SplashScreen.this.startActivity(intent1);
+//                    SplashScreen.this.finish();
+//                }
                 Intent intent = new Intent(SplashScreen.this, LoginActivity.class);
                 SplashScreen.this.startActivity(intent);
                 SplashScreen.this.finish();
