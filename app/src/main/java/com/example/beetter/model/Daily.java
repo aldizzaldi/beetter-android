@@ -13,6 +13,16 @@ public class Daily {
     String yangSudahDikerjakan;
     @SerializedName("next_24_hour_activities")
     String yangAkanDikerjakan;
+    @SerializedName("created_at")
+    String tanggalDibuat;
+
+    public String getTanggalDibuat() {
+        return tanggalDibuat;
+    }
+
+    public void setTanggalDibuat(String tanggalDibuat) {
+        this.tanggalDibuat = tanggalDibuat;
+    }
 
     public int getId() {
         return id;
