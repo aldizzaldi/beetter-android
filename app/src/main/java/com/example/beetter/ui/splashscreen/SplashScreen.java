@@ -31,6 +31,7 @@ public class SplashScreen extends AppCompatActivity implements ISplashScreenVIew
 //                }
 //                else{
 //                    Intent intent1 = new Intent(SplashScreen.this, NavigationActivity.class);
+//                    SharedPrefUtils.setIntSharedPref("id_team", 2);
 //                    SplashScreen.this.startActivity(intent1);
 //                    SplashScreen.this.finish();
 //                }
