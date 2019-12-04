@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     android:background="#F2F2F2">
 
-    <include
-        android:id="@+id/toolnbar"
-        layout="@layout/toolbar_main" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView8"
@@ -17,7 +14,7 @@
         app:cardBackgroundColor="#f2f2f2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolnbar">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -108,25 +105,16 @@
             <View
                 android:id="@+id/view3"
                 android:layout_width="1dp"
-                android:layout_height="170dp"
+                android:layout_height="120dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="80dp"
+                android:layout_marginBottom="8dp"
                 android:background="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/viewGender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="32dp"
-                android:text="Male"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/view3"
-                app:layout_constraintTop_toBottomOf="@+id/viewDOB" />
 
             <TextView
                 android:id="@+id/viewName"
@@ -179,39 +167,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/view3"
                 app:layout_constraintTop_toBottomOf="@+id/viewUsername" />
-
-            <TextView
-                android:id="@+id/txtDOB"
-                android:layout_width="wrap_content"
-                android:layout_height="21dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="16dp"
-                android:text="Date of Birth"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
-
-            <TextView
-                android:id="@+id/viewDOB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-
-                android:text="26/06/1999"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/view3"
-                app:layout_constraintTop_toBottomOf="@+id/viewEmail" />
-
-            <TextView
-                android:id="@+id/txtGender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="32dp"
-                android:text="Gender"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtDOB" />
 
             <TextView
                 android:id="@+id/txtName"
