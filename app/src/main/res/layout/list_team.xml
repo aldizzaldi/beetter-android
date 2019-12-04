@@ -7,10 +7,6 @@
     android:background="#f2f2f2"
     tools:context=".MainActivity">
 
-    <include
-        android:id="@+id/toolnbar"
-        layout="@layout/toolbar_main" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewListTeam"
         android:layout_width="match_parent"

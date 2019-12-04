@@ -6,10 +6,6 @@
     android:layout_height="wrap_content"
     android:background="#F2F2F2">
 
-    <include
-        android:id="@+id/toolnbar"
-        layout="@layout/toolbar_main" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView6"
         android:layout_width="match_parent"

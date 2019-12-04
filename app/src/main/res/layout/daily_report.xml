@@ -4,12 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#f2f2f2"
-    tools:context=".MainActivity">
-
-    <include
-        android:id="@+id/toolnbar"
-        layout="@layout/toolbar_main" />
+    android:background="#f2f2f2">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView9"
