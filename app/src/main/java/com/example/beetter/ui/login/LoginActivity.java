@@ -1,5 +1,6 @@
 package com.example.beetter.ui.login;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,8 @@ public class LoginActivity extends AppCompatActivity implements ILoginVIew{
 
     private LoginPresenter presenter;
 
+    private ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,5 +66,16 @@ public class LoginActivity extends AppCompatActivity implements ILoginVIew{
     @Override
     public void showMessage(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showLoading(){
+        progressDialog.setMessage("Loading");
+        progressDialog.show();
+    }
+
+    @Override
+    public void hideLoading(){
+        progressDialog.dismiss();
     }
 }

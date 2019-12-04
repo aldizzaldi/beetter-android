@@ -25,6 +25,7 @@ public class LoginPresenter {
     }
 
     void doLogin(String txtEmail, String txtPassword){
+        view.showLoading();
         apiEndPoint.login(txtEmail,txtPassword).enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -32,12 +33,14 @@ public class LoginPresenter {
 
                 if(response.isSuccessful()){
                     token = "Bearer " + response.body().getToken();
+                    view.hideLoading();
                     SharedPrefUtils.setStringSharedPref("token", token);
                     SharedPrefUtils.setStringSharedPref("email", txtEmail);
                     Log.e("hiyaLogin", "response e berhasil lo");
                     view.moveToTeamList();
                 }
                 else{
+                    view.hideLoading();
                     view.showMessage("Password atau username salah");
                 }
             }
