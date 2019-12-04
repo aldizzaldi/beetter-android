@@ -24,8 +24,10 @@ public class DailyReportPresenter {
     }
 
     void getDailyReportToday(){
-        apiEndPoint.getDailyReport(SharedPrefUtils.getStringSharedPref("token", ""), SharedPrefUtils.getIntSharedPref("id_team", 0), "2019-11-21").enqueue(new Callback<GetDailyReportResponse>() {
-            @NonNull
+        String token = SharedPrefUtils.getStringSharedPref("token", "");
+        int idTeam = SharedPrefUtils.getIntSharedPref("id_team", 0);
+        String date = "2019-11-27";
+        apiEndPoint.getDailyReport(token, idTeam, date).enqueue(new Callback<GetDailyReportResponse>() {
             @Override
             public void onResponse(Call<GetDailyReportResponse> call, Response<GetDailyReportResponse> response) {
                 if(response.isSuccessful()){
@@ -45,7 +47,7 @@ public class DailyReportPresenter {
 
             @Override
             public void onFailure(Call<GetDailyReportResponse> call, Throwable t) {
-
+                view.showError(t.getMessage());
             }
         });
     }

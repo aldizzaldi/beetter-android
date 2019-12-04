@@ -29,19 +29,17 @@ public class HomeFragment extends Fragment implements IHomeView{
     private RecyclerView recyclerView;
     private HomeAdapter homeAdapter;
     private HomePresenter presenter;
+    private View root;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        root = inflater.inflate(R.layout.home, container, false);
 
-
-        androidx.appcompat.widget.Toolbar toolbar = (Toolbar)root.findViewById(R.id.toolnbar);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+//        androidx.appcompat.widget.Toolbar toolbar = (Toolbar)root.findViewById(R.id.toolnbar);
+//        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
 
         presenter = new HomePresenter(this);
         presenter.getListMemberInTeam();
-
-
         return root;
 
     }
@@ -61,6 +59,7 @@ public class HomeFragment extends Fragment implements IHomeView{
 
     @Override
     public void getTeamMember(ArrayList<ReportProductivity> reportProductivities) {
+        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewMember);
         homeAdapter = new HomeAdapter(reportProductivities, getContext());
         Log.e("hehe", reportProductivities.size() + "!");
 

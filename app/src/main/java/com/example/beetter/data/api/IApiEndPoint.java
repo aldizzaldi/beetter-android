@@ -41,13 +41,13 @@ public interface IApiEndPoint {
 //            @Header("Authorization") String header
 //    );
 
-    @FormUrlEncoded
-    @POST("daily-tracking-report/overal-per-member-team")
-    Call<GetTrackingReport> getTrackReport(
-            @Header("Authorization") String header,
-            @Field("id_team") int id,
-            @Field("date") String date
-    );
+//    @FormUrlEncoded
+//    @POST("daily-tracking-report/overal-per-member-team")
+//    Call<GetTrackingReport> getTrackReport(
+//            @Header("Authorization") String header,
+//            @Field("id_team") int id,
+//            @Field("date") String date
+//    );
 
     @FormUrlEncoded
     @POST("daily-scrum-report/list")

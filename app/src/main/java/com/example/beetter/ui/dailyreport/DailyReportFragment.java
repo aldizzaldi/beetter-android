@@ -27,20 +27,26 @@ public class DailyReportFragment extends Fragment implements IDailyReportView{
 
     private DailyReportPresenter presenter;
     private DailyReportAdapter dailyReportAdapter;
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
+    private View root;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.daily_report, container, false);
-//        ButterKnife.bind(this, root);
-        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewDailyReport);
+        root = inflater.inflate(R.layout.daily_report, container, false);
         presenter = new DailyReportPresenter(this);
         presenter.getDailyReportToday();
         return root;
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
     public void getDailyReport(ArrayList<DailyReport> dailyReports) {
+        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewDailyReport);
         dailyReportAdapter = new DailyReportAdapter(dailyReports, getContext());
         Log.e("daily", dailyReports.size() + "!");
         recyclerView.setAdapter(dailyReportAdapter);

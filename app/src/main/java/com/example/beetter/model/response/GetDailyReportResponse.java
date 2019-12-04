@@ -9,7 +9,7 @@ public class GetDailyReportResponse {
     @SerializedName("success")
     Boolean success;
     @SerializedName("data")
-    ArrayList<DailyReport> dataDailyReport;
+    ArrayList<DailyReport> dailyReports;
 
     public Boolean getSuccess() {
         return success;
@@ -20,10 +20,10 @@ public class GetDailyReportResponse {
     }
 
     public ArrayList<DailyReport> getDataDailyReport() {
-        return dataDailyReport;
+        return dailyReports;
     }
 
     public void setDataDailyReport(ArrayList<DailyReport> dataDailyReport) {
-        this.dataDailyReport = dataDailyReport;
+        this.dailyReports = dataDailyReport;
     }
 }
