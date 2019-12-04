@@ -22,7 +22,7 @@ public class SlidingUp extends BottomSheetDialogFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.team, container, false);
 
-        Button btnExitTeam = v.findViewById(R.id.btnExitTeam);
+        Button btnExitTeam = v.findViewById(R.id.btnGoToAnotherTeam);
 
         btnExitTeam.setOnClickListener(new View.OnClickListener() {
             @Override
