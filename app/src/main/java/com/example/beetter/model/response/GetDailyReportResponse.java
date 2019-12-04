@@ -26,4 +26,12 @@ public class GetDailyReportResponse {
     public void setDataDailyReport(ArrayList<DailyReport> dataDailyReport) {
         this.dailyReports = dataDailyReport;
     }
+
+    @Override
+    public String toString() {
+        return "GetDailyReportResponse{" +
+                "success=" + success +
+                ", dailyReports=" + dailyReports +
+                '}';
+    }
 }

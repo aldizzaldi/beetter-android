@@ -32,7 +32,7 @@ public class DailyReportPresenter {
             public void onResponse(Call<GetDailyReportResponse> call, Response<GetDailyReportResponse> response) {
                 if(response.isSuccessful()){
                     ArrayList<DailyReport> dailyReports = new ArrayList<>();
-                    Log.e("respon berhasil", "daily report respon mu berhasil");
+                    Log.e("respon berhasil", response.body().toString());
                     int batas = response.body().getDataDailyReport().size();
                     for(int i = 0; i < batas; i++){
                         DailyReport dr = response.body().getDataDailyReport().get(i);
