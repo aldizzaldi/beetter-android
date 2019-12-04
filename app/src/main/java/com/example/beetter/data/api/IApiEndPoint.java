@@ -27,8 +27,7 @@ public interface IApiEndPoint {
 
     @GET("user")
     Call<GetUserResponse> getLogin(
-            @Header("Authorization") String header,
-            @Field("user") User user
+            @Header("Authorization") String header
     );
 
     @POST("team/team-list")
