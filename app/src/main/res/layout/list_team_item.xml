@@ -10,7 +10,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="10dp"
-        app:cardCornerRadius="3dp"
+        app:cardCornerRadius="7dp"
         app:cardElevation="20dp"
         app:cardMaxElevation="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="403dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <TextView
@@ -32,7 +32,7 @@
                 android:layout_marginEnd="296dp"
                 android:text="Tim Skuy (10)"
                 android:textColor="#0D3C67"
-                android:textSize="13sp"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -56,12 +56,12 @@
                 android:id="@+id/list_team_name_pm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="14dp"
                 android:text="Project Manager : Buddy"
                 android:textColor="#2C3144"
-                android:textSize="9sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view2" />
