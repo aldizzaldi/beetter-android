@@ -21,10 +21,10 @@
         android:background="#BBBBBB" />
 
     <Button
-        android:id="@+id/btnExitTeam"
+        android:id="@+id/btnGoToAnotherTeam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="clip_horizontal|clip_vertical"
-        android:text="Exit from this Team"
+        android:text="Go to Another Team"
         android:textAllCaps="false" />
 </LinearLayout>
