@@ -61,6 +61,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginVIew{
     public void moveToTeamList() {
         Intent intent = new Intent(getApplicationContext(), ListTeamActivity.class);
         startActivity(intent);
+        LoginActivity.this.finish();
     }
 
     @Override
@@ -70,7 +71,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginVIew{
 
     @Override
     public void showLoading(){
-        progressDialog.setMessage("Loading");
+        progressDialog.setMessage("Loading...");
         progressDialog.show();
     }
 
