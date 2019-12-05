@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginVIew{
 
     @Override
     public void showLoading(){
-        progressDialog.setMessage("Loading...");
+        progressDialog.setMessage("Loading");
         progressDialog.show();
     }
 

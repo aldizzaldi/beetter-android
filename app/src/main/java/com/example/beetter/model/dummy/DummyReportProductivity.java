@@ -6,6 +6,11 @@ public class DummyReportProductivity {
     private String name;
     private String timeConsume;
 
+    public DummyReportProductivity(String name, String timeConsume) {
+        this.name = name;
+        this.timeConsume = timeConsume;
+    }
+
     public String getName() {
         return name;
     }

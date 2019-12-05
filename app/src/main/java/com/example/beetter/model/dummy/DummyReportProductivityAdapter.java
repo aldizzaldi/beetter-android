@@ -16,16 +16,22 @@ import java.util.ArrayList;
 public class DummyReportProductivityAdapter extends RecyclerView.Adapter<DummyReportProductivityAdapter.DummyProductivitiesViewHolder>{
     private ArrayList<DummyReportProductivity> dataList;
 
+    public DummyReportProductivityAdapter(ArrayList<DummyReportProductivity> dataList) {
+        this.dataList = dataList;
+    }
+
     @NonNull
     @Override
     public DummyProductivitiesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.report_productivity_item, parent, false);
-        return null;
+        View view = layoutInflater.inflate(R.layout.list_app_item, parent, false);
+        return new DummyProductivitiesViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull DummyProductivitiesViewHolder holder, int position) {
+        holder.txtJam.setText(dataList.get(position).getTimeConsume());
+        holder.txtNamaApps.setText(dataList.get(position).getName());
 
     }
 
@@ -38,10 +44,11 @@ public class DummyReportProductivityAdapter extends RecyclerView.Adapter<DummyRe
         private TextView txtNamaApps;
         private TextView txtJam;
 
-        public DummyProductivitiesViewHolder(@NonNull View itemView, TextView txtNamaApps, TextView txtJam) {
+        public DummyProductivitiesViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.txtNamaApps = txtNamaApps;
-            this.txtJam = txtJam;
+            txtNamaApps = itemView.findViewById(R.id.textView7);
+            txtJam = itemView.findViewById(R.id.textView9);
+
         }
     }
 }

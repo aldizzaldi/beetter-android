@@ -51,9 +51,9 @@ public class DummyDailyAdapter extends  RecyclerView.Adapter<DummyDailyAdapter.D
         public DummyDailyViewHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.memberName);
-            txtLastWork = itemView.findViewById(R.id.report1);
-            txtObstacle = itemView.findViewById(R.id.report2);
-            txtNextWork = itemView.findViewById(R.id.report3);
+            txtLastWork = itemView.findViewById(R.id.valueReport1);
+            txtObstacle = itemView.findViewById(R.id.valueReport3);
+            txtNextWork = itemView.findViewById(R.id.valueReport2);
         }
     }
 }

@@ -35,10 +35,7 @@ public class DailyReportFragment extends Fragment {
     private RecyclerView recyclerView;
     private View root;
     private ArrayList<DummyDailyReport> dailyReportList;
-    private TextView txtName;
-    private TextView txtLast24;
-    private TextView txtNext24;
-    private TextView txtObstacle;
+    
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -47,10 +44,7 @@ public class DailyReportFragment extends Fragment {
         //presenter.getDailyReportToday();
 
         recyclerView = (RecyclerView)root.findViewById(R.id.recyclerViewDailyReport);
-        txtName = (TextView) root.findViewById(R.id.memberName);
-        txtLast24 = (TextView) root.findViewById(R.id.valueReport1);
-        txtObstacle = (TextView)root.findViewById(R.id.valueReport3);
-        txtNext24 = (TextView)root.findViewById(R.id.valueReport2);
+
         addData();
 
         dummyDailyAdapter = new DummyDailyAdapter(dailyReportList);
