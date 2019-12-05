@@ -5,7 +5,6 @@ import android.widget.ImageView;
 public class DummyReportProductivity {
     private String name;
     private String timeConsume;
-    private ImageView application;
 
     public String getName() {
         return name;
@@ -23,11 +22,4 @@ public class DummyReportProductivity {
         this.timeConsume = timeConsume;
     }
 
-    public ImageView getApplication() {
-        return application;
-    }
-
-    public void setApplication(ImageView application) {
-        this.application = application;
-    }
 }

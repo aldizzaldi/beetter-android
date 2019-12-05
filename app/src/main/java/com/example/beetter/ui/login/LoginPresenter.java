@@ -33,10 +33,10 @@ public class LoginPresenter {
 
                 if(response.isSuccessful()){
                     token = "Bearer " + response.body().getToken();
-                    view.hideLoading();
                     SharedPrefUtils.setStringSharedPref("token", token);
                     SharedPrefUtils.setStringSharedPref("email", txtEmail);
                     Log.e("hiyaLogin", "response e berhasil lo");
+                    view.hideLoading();
                     view.moveToTeamList();
                 }
                 else{
