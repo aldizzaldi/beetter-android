@@ -41,7 +41,7 @@
 
             <View
                 android:id="@+id/view2"
-                android:layout_width="100dp"
+                android:layout_width="150dp"
                 android:layout_height="1dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
