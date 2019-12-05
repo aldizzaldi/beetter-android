@@ -46,6 +46,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginVIew{
         setContentView(R.layout.login);
         ButterKnife.bind(this);
 
+        progressDialog = new ProgressDialog(this);
         presenter = new LoginPresenter(this);
     }
 

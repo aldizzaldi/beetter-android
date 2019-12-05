@@ -19,24 +19,44 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beetter.R;
+import com.example.beetter.model.dummy.DummyDailyAdapter;
+import com.example.beetter.model.dummy.DummyDailyReport;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DailyReportFragment extends Fragment implements IDailyReportView{
+public class DailyReportFragment extends Fragment {
 
     private DailyReportPresenter presenter;
     private DailyReportAdapter dailyReportAdapter;
+    private DummyDailyAdapter dummyDailyAdapter;
     private RecyclerView recyclerView;
     private View root;
+    private ArrayList<DummyDailyReport> dailyReportList;
+    private TextView txtName;
+    private TextView txtLast24;
+    private TextView txtNext24;
+    private TextView txtObstacle;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.daily_report, container, false);
-        presenter = new DailyReportPresenter(this);
-        presenter.getDailyReportToday();
+       // presenter = new DailyReportPresenter(this);
+        //presenter.getDailyReportToday();
+
+        recyclerView = (RecyclerView)root.findViewById(R.id.recyclerViewDailyReport);
+        txtName = (TextView) root.findViewById(R.id.memberName);
+        txtLast24 = (TextView) root.findViewById(R.id.valueReport1);
+        txtObstacle = (TextView)root.findViewById(R.id.valueReport3);
+        txtNext24 = (TextView)root.findViewById(R.id.valueReport2);
+        addData();
+
+        dummyDailyAdapter = new DummyDailyAdapter(dailyReportList);
+        recyclerView.setAdapter(dummyDailyAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
         return root;
     }
 
@@ -52,17 +72,27 @@ public class DailyReportFragment extends Fragment implements IDailyReportView{
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-    @Override
-    public void getDailyReport(ArrayList<DailyReport> dailyReports) {
-        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewDailyReport);
-        dailyReportAdapter = new DailyReportAdapter(dailyReports, getContext());
-        Log.e("daily", dailyReports.size() + "!");
-        recyclerView.setAdapter(dailyReportAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-    }
+//    @Override
+//    public void getDailyReport(ArrayList<DailyReport> dailyReports) {
+//        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewDailyReport);
+//        dailyReportAdapter = new DailyReportAdapter(dailyReports, getContext());
+//        Log.e("daily", dailyReports.size() + "!");
+//        recyclerView.setAdapter(dailyReportAdapter);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+//    }
 
-    @Override
-    public void showError(String message) {
-        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+//    @Override
+//    public void showError(String message) {
+//        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+//    }
+
+    void addData(){
+        dailyReportList = new ArrayList<>();
+        dailyReportList.add(new DummyDailyReport("Buddy","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
+        dailyReportList.add(new DummyDailyReport("Steven","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
+        dailyReportList.add(new DummyDailyReport("Samantha","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
+        dailyReportList.add(new DummyDailyReport("Elsa","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
+        dailyReportList.add(new DummyDailyReport("Anna","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
+
     }
 }

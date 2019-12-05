@@ -16,6 +16,10 @@ import java.util.ArrayList;
 public class DummyDailyAdapter extends  RecyclerView.Adapter<DummyDailyAdapter.DummyDailyViewHolder>{
     private ArrayList<DummyDailyReport> dataList;
 
+    public DummyDailyAdapter(ArrayList<DummyDailyReport> dataList) {
+        this.dataList = dataList;
+    }
+
     @NonNull
     @Override
     public DummyDailyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,7 +39,7 @@ public class DummyDailyAdapter extends  RecyclerView.Adapter<DummyDailyAdapter.D
 
     @Override
     public int getItemCount() {
-        return 0;
+        return (dataList != null) ? dataList.size() : 0;
     }
 
     public class DummyDailyViewHolder extends RecyclerView.ViewHolder{
