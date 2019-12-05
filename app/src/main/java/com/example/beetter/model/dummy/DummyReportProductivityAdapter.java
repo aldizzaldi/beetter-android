@@ -13,45 +13,35 @@ import com.example.beetter.R;
 
 import java.util.ArrayList;
 
-public class DummyReportProductivityAdapter {
-    public class DummyReportViewHolder extends RecyclerView.ViewHolder {
-        private ArrayList<DummyReportProductivity> dataList;
+public class DummyReportProductivityAdapter extends RecyclerView.Adapter<DummyReportProductivityAdapter.DummyProductivitiesViewHolder>{
+    private ArrayList<DummyReportProductivity> dataList;
 
-        public DummyReportViewHolder(@NonNull View itemView) {
+    @NonNull
+    @Override
+    public DummyProductivitiesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.report_productivity_item, parent, false);
+        return null;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull DummyProductivitiesViewHolder holder, int position) {
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
+
+    public class DummyProductivitiesViewHolder extends RecyclerView.ViewHolder{
+        private TextView txtNamaApps;
+        private TextView txtJam;
+
+        public DummyProductivitiesViewHolder(@NonNull View itemView, TextView txtNamaApps, TextView txtJam) {
             super(itemView);
-        }
-
-        @NonNull
-        public DummyDailyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-            View view = layoutInflater.inflate(R.layout.report_productivity_item, parent, false);
-            return new DummyDailyViewHolder(view);
-
-        }
-        private String name;
-        private String timeConsume;
-        private ImageView application;
-
-        public void onBindViewHolder(@NonNull DummyDailyViewHolder holder, int position) {
-            holder.txtName.setText(dataList.get(position).getName());
-            holder.txtTimeConsume.setText(dataList.get(position).getTimeConsume());
-//            holder.application.setImageResource();
-        }
-
-        public int getItemCount() {
-            return 0;
-        }
-
-        public class DummyDailyViewHolder extends RecyclerView.ViewHolder{
-            private TextView txtName;
-            private TextView txtTimeConsume;
-            private ImageView application;
-
-            public DummyDailyViewHolder(@NonNull View itemView) {
-                super(itemView);
-                txtName = itemView.findViewById(R.id.memberName);
-                txtTimeConsume = itemView.findViewById(R.id.report1);
-            }
+            this.txtNamaApps = txtNamaApps;
+            this.txtJam = txtJam;
         }
     }
 }
