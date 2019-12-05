@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import com.example.beetter.model.dummy.DummyDailyAdapter;
 import com.example.beetter.model.dummy.DummyDailyReport;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,7 +37,14 @@ public class DailyReportFragment extends Fragment {
     private RecyclerView recyclerView;
     private View root;
     private ArrayList<DummyDailyReport> dailyReportList;
-    
+
+    @BindView(R.id.btnDate)
+    Button btnDate;
+    @BindView(R.id.showDate)
+    TextView showDate;
+
+    Calendar myCalendar;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
