@@ -6,6 +6,13 @@ public class DummyDailyReport {
     private String nextWork;
     private String obstacle;
 
+    public DummyDailyReport(String name, String lastWork, String nextWork, String obstacle) {
+        this.name = name;
+        this.lastWork = lastWork;
+        this.nextWork = nextWork;
+        this.obstacle = obstacle;
+    }
+
     public String getName() {
         return name;
     }

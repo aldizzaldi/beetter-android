@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginVIew{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         ButterKnife.bind(this);
+
         progressDialog = new ProgressDialog(this);
         presenter = new LoginPresenter(this);
     }
@@ -61,6 +62,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginVIew{
     public void moveToTeamList() {
         Intent intent = new Intent(getApplicationContext(), ListTeamActivity.class);
         startActivity(intent);
+        LoginActivity.this.finish();
     }
 
     @Override
