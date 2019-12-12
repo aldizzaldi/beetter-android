@@ -29,36 +29,23 @@ import java.util.Calendar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DailyReportFragment extends Fragment {
+public class DailyReportFragment extends Fragment implements IDailyReportView {
 
     private DailyReportPresenter presenter;
     private DailyReportAdapter dailyReportAdapter;
-    private DummyDailyAdapter dummyDailyAdapter;
     private RecyclerView recyclerView;
     private View root;
-    private ArrayList<DummyDailyReport> dailyReportList;
 
     @BindView(R.id.btnDate)
     Button btnDate;
     @BindView(R.id.showDate)
     TextView showDate;
 
-    Calendar myCalendar;
-
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.daily_report, container, false);
-       // presenter = new DailyReportPresenter(this);
-        //presenter.getDailyReportToday();
-
-        recyclerView = (RecyclerView)root.findViewById(R.id.recyclerViewDailyReport);
-
-        addData();
-
-        dummyDailyAdapter = new DummyDailyAdapter(dailyReportList);
-        recyclerView.setAdapter(dummyDailyAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        presenter = new DailyReportPresenter(this);
+        presenter.getDailyReportToday();
 
         return root;
     }
@@ -75,27 +62,27 @@ public class DailyReportFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-//    @Override
-//    public void getDailyReport(ArrayList<DailyReport> dailyReports) {
-//        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewDailyReport);
-//        dailyReportAdapter = new DailyReportAdapter(dailyReports, getContext());
-//        Log.e("daily", dailyReports.size() + "!");
-//        recyclerView.setAdapter(dailyReportAdapter);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//    }
-
-//    @Override
-//    public void showError(String message) {
-//        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
-//    }
-
-    void addData(){
-        dailyReportList = new ArrayList<>();
-        dailyReportList.add(new DummyDailyReport("Buddy","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
-        dailyReportList.add(new DummyDailyReport("Steven","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
-        dailyReportList.add(new DummyDailyReport("Samantha","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
-        dailyReportList.add(new DummyDailyReport("Elsa","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
-        dailyReportList.add(new DummyDailyReport("Anna","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
-
+    @Override
+    public void getDailyReport(ArrayList<DailyReport> dailyReports) {
+        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewDailyReport);
+        dailyReportAdapter = new DailyReportAdapter(dailyReports, getContext());
+        Log.e("daily", dailyReports.size() + "!");
+        recyclerView.setAdapter(dailyReportAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
+
+    @Override
+    public void showError(String message) {
+        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+    }
+
+//    void addData(){
+//        dailyReportList = new ArrayList<>();
+//        dailyReportList.add(new DummyDailyReport("Buddy","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
+//        dailyReportList.add(new DummyDailyReport("Steven","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
+//        dailyReportList.add(new DummyDailyReport("Samantha","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
+//        dailyReportList.add(new DummyDailyReport("Elsa","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
+//        dailyReportList.add(new DummyDailyReport("Anna","Kemarin saya gabut", "Jadi saya merubah rencana, menegerjakan di kamopus", "Charger saya ketinggalan" ));
+//
+//    }
 }

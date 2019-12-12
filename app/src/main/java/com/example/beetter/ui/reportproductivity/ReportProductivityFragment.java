@@ -36,7 +36,6 @@ public class ReportProductivityFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.report_productivity, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
 
 //        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView4);
 //        recyclerView2 = (RecyclerView) root.findViewById(R.id.recyclerView);
