@@ -29,7 +29,7 @@ public class HomePresenter {
             @Override
             public void onResponse(Call<GetListMemberInTeamResponse> call, Response<GetListMemberInTeamResponse> response) {
                 if(response.isSuccessful()){
-                    ArrayList<ReportProductivity> reportProductivities = new ArrayList<>();
+                    ArrayList<HomeReportProductivity> reportProductivities = new ArrayList<>();
                     for(int i =0; i < response.body().getReportProductivities().size(); i++){
                         Log.e("Berhasil masuk", "yey");
                         reportProductivities.add(response.body().getReportProductivities().get(i));

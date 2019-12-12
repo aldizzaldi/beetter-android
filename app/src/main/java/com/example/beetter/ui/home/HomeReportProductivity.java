@@ -4,7 +4,7 @@ import com.example.beetter.model.User;
 import com.example.beetter.model.Value;
 import com.google.gson.annotations.SerializedName;
 
-public class ReportProductivity {
+public class HomeReportProductivity {
     @SerializedName("user")
     User user;
     @SerializedName("value")

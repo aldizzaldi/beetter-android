@@ -17,10 +17,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder>{
-    private ArrayList<ReportProductivity> reportProductivities;
+    private ArrayList<HomeReportProductivity> reportProductivities;
     private final Context context;
 
-    public HomeAdapter(ArrayList<ReportProductivity> reportProductivities, Context context) {
+    public HomeAdapter(ArrayList<HomeReportProductivity> reportProductivities, Context context) {
         this.reportProductivities = reportProductivities;
         this.context = context;
     }

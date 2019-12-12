@@ -1,6 +1,7 @@
 package com.example.beetter.model.response;
 
-import com.example.beetter.ui.home.ReportProductivity;
+import com.example.beetter.ui.home.HomeReportProductivity;
+import com.example.beetter.ui.reportproductivity.ReportProductivityApps;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
@@ -8,8 +9,17 @@ import java.util.ArrayList;
 public class GetTrackingReport {
     @SerializedName("success")
     Boolean success;
+
+    public ArrayList<ReportProductivityApps> getReportProductivitiesApps() {
+        return reportProductivitiesApps;
+    }
+
+    public void setReportProductivitiesApps(ArrayList<ReportProductivityApps> reportProductivitiesApps) {
+        this.reportProductivitiesApps = reportProductivitiesApps;
+    }
+
     @SerializedName("data")
-    ArrayList<ReportProductivity> reportProductivities;
+    ArrayList<ReportProductivityApps> reportProductivitiesApps;
 
     public Boolean getSuccess() {
         return success;
@@ -19,11 +29,4 @@ public class GetTrackingReport {
         this.success = success;
     }
 
-    public ArrayList<ReportProductivity> getReportProductivities() {
-        return reportProductivities;
-    }
-
-    public void setReportProductivities(ArrayList<ReportProductivity> reportProductivities) {
-        this.reportProductivities = reportProductivities;
-    }
 }

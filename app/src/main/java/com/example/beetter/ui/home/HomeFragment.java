@@ -7,20 +7,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beetter.R;
-import com.example.beetter.model.dummy.Member;
-import com.example.beetter.model.dummy.MemberAdapter;
 
 import java.util.ArrayList;
 
@@ -58,7 +53,7 @@ public class HomeFragment extends Fragment implements IHomeView{
 
 
     @Override
-    public void getTeamMember(ArrayList<ReportProductivity> reportProductivities) {
+    public void getTeamMember(ArrayList<HomeReportProductivity> reportProductivities) {
         recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewMember);
         homeAdapter = new HomeAdapter(reportProductivities, getContext());
         Log.e("hehe", reportProductivities.size() + "!");

@@ -64,4 +64,12 @@ public interface IApiEndPoint {
             @Field("date") String date
     );
 
+    @FormUrlEncoded
+    @POST("daily-tracking-report/overal-per-user-team")
+    Call<GetTrackingReport> getTrackingReport(
+            @Header("Authorization") String header,
+            @Field("id_team") int id,
+            @Field("date") String date
+    );
+
 }
