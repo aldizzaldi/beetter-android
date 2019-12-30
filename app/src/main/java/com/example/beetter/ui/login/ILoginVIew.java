@@ -6,4 +6,5 @@ public interface ILoginVIew {
 
     void showLoading();
     void hideLoading();
+    void showError();
 }

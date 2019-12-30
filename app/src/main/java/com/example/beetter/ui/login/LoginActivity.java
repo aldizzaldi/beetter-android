@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -54,8 +56,12 @@ public class LoginActivity extends AppCompatActivity implements ILoginVIew{
     public void onBtnLoginClicked(){
         String username = email.getText().toString();
         String pwd = password.getText().toString();
-
-        presenter.doLogin(username,pwd);
+        if(email.getText().length() == 0){
+            presenter.showError();
+        }
+        else{
+            presenter.doLogin(username,pwd);
+        }
     }
 
     @Override
@@ -80,4 +86,11 @@ public class LoginActivity extends AppCompatActivity implements ILoginVIew{
     public void hideLoading(){
         progressDialog.dismiss();
     }
+
+    @Override
+    public void showError() {
+        Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
+        email.startAnimation(shake);
+    }
+
 }

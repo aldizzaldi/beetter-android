@@ -16,6 +16,9 @@ import retrofit2.Response;
 public class HomePresenter {
     private IHomeView view;
     private final IApiEndPoint apiEndPoint = ApiRetrofit.getInstance().create(IApiEndPoint.class);
+    ArrayList<HomeReportProductivity> reportProductivities = new ArrayList<>();
+    int size = 0;
+    double overall = 0;
 
     public HomePresenter(IHomeView view) {
         this.view = view;
@@ -25,12 +28,13 @@ public class HomePresenter {
         String token = SharedPrefUtils.getStringSharedPref("token", "");
         int idTeam = SharedPrefUtils.getIntSharedPref("id_team", 0);
         String date = "2019-11-27";
+
         apiEndPoint.getListMemberInTeam(token,idTeam,date).enqueue(new Callback<GetListMemberInTeamResponse>() {
             @Override
             public void onResponse(Call<GetListMemberInTeamResponse> call, Response<GetListMemberInTeamResponse> response) {
                 if(response.isSuccessful()){
-                    ArrayList<HomeReportProductivity> reportProductivities = new ArrayList<>();
-                    for(int i =0; i < response.body().getReportProductivities().size(); i++){
+                    size = response.body().getReportProductivities().size();
+                    for(int i =0; i < size; i++){
                         Log.e("Berhasil masuk", "yey");
                         reportProductivities.add(response.body().getReportProductivities().get(i));
                     }
@@ -46,5 +50,17 @@ public class HomePresenter {
                 view.showError(t.getMessage());
             }
         });
+    }
+
+    void showOverallProductivity(){
+        for(int i = 0; i < size; i++){
+           overall =  overall + reportProductivities.get(i).getValue().getProductiveValue();
+        }
+        Log.e("overall", "" + overall);
+        overall = overall/size;
+        Math.round(overall);
+
+        view.showOverallProductivitiesTeam(overall);
+        Log.e("overall2", "" + overall);
     }
 }

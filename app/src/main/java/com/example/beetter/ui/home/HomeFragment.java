@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -19,6 +20,9 @@ import com.example.beetter.R;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class HomeFragment extends Fragment implements IHomeView{
 
     private RecyclerView recyclerView;
@@ -26,15 +30,20 @@ public class HomeFragment extends Fragment implements IHomeView{
     private HomePresenter presenter;
     private View root;
 
+    @BindView(R.id.overall_productivity)
+    TextView overallProductivity;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.home, container, false);
 
 //        androidx.appcompat.widget.Toolbar toolbar = (Toolbar)root.findViewById(R.id.toolnbar);
 //        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ButterKnife.bind(this, root);
 
         presenter = new HomePresenter(this);
         presenter.getListMemberInTeam();
+        presenter.showOverallProductivity();
         return root;
 
     }
@@ -66,5 +75,10 @@ public class HomeFragment extends Fragment implements IHomeView{
     @Override
     public void showError(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showOverallProductivitiesTeam(double value) {
+        overallProductivity.setText(value + "%");
     }
 }

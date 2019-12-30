@@ -49,7 +49,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
 //        }
         holder.homeMemberName.setText(reportProductivities.get(position).getUser().getName());
         holder.homeProductivities.setText(reportProductivities.get(position).getValue().getProductiveValue() + "%");
-        holder.homeProductivities.setTextColor(R.color.colorRed);
+        holder.homeProductivities.setTextColor(R.color.design_default_color_primary);
+        holder.homeMemberName.setTextColor(R.color.colorRed);
     }
 
     @Override

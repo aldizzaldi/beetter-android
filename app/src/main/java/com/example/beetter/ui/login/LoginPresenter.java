@@ -2,9 +2,12 @@ package com.example.beetter.ui.login;
 
 import android.content.Intent;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import com.example.beetter.NavigationActivity;
+import com.example.beetter.R;
 import com.example.beetter.SharedPrefUtils;
 import com.example.beetter.data.api.ApiRetrofit;
 import com.example.beetter.data.api.IApiEndPoint;
@@ -50,5 +53,10 @@ public class LoginPresenter {
                 view.showMessage(t.getMessage());
             }
         });
+    }
+
+    void showError(){
+        view.showMessage("Field username atau password kosong");
+        view.showError();
     }
 }

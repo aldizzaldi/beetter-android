@@ -6,5 +6,6 @@
     <color name="colorGreen">#08f589 </color>
     <color name="colorYellow">#ffd500</color>
     <color name="colorRed">#e60000</color>
+    <color name="backgroundShimmer">#dddddd</color>
 <!--    <color name="colorTheme">#0D3C67</color>-->
 </resources>
