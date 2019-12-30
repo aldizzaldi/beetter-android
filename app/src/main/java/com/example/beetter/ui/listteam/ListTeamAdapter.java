@@ -1,5 +1,6 @@
 package com.example.beetter.ui.listteam;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -45,6 +46,7 @@ public class ListTeamAdapter extends RecyclerView.Adapter<ListTeamAdapter.ListTe
             SharedPrefUtils.setIntSharedPref("id_team", idTeam);
             Intent intent = new Intent(context, NavigationActivity.class);
             context.startActivity(intent);
+            ((Activity)context).finish();
         });
     }
 

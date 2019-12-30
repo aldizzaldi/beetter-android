@@ -26,6 +26,7 @@
         <activity android:name=".ui.listteam.ListTeamActivity"
             android:theme="@style/hehe"/>
         <activity android:name=".ui.team.TeamFragment"/>
+        <activity android:name=".ui.profile.ProfileActivity"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

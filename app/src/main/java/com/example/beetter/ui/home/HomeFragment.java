@@ -1,10 +1,12 @@
 package com.example.beetter.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -17,6 +19,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beetter.R;
+import com.example.beetter.SharedPrefUtils;
+import com.example.beetter.ui.login.LoginActivity;
+import com.example.beetter.ui.profile.ProfileActivity;
+import com.example.beetter.ui.splashscreen.SplashScreen;
 
 import java.util.ArrayList;
 
@@ -58,9 +64,24 @@ public class HomeFragment extends Fragment implements IHomeView{
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_main, menu);
         super.onCreateOptionsMenu(menu, inflater);
-        
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.profile){
+            Intent intent = new Intent(getActivity(), ProfileActivity.class);
+            this.startActivity(intent);
+        }
+        else {
+            SharedPrefUtils.removeSavedPref("token");
+            Intent intent = new Intent(getActivity(), SplashScreen.class);
+            this.startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public void getTeamMember(ArrayList<HomeReportProductivity> reportProductivities) {

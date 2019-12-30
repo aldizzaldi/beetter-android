@@ -1,5 +1,6 @@
 package com.example.beetter.ui.dailyreport;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,10 +20,12 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.beetter.DatePicker;
 import com.example.beetter.R;
 import com.example.beetter.model.dummy.DummyDailyAdapter;
 import com.example.beetter.model.dummy.DummyDailyReport;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -35,6 +38,7 @@ public class DailyReportFragment extends Fragment implements IDailyReportView {
     private DailyReportAdapter dailyReportAdapter;
     private RecyclerView recyclerView;
     private View root;
+    Calendar myCalendar;
 
     @BindView(R.id.btnDate)
     Button btnDate;
@@ -46,6 +50,7 @@ public class DailyReportFragment extends Fragment implements IDailyReportView {
         root = inflater.inflate(R.layout.daily_report, container, false);
         presenter = new DailyReportPresenter(this);
         presenter.getDailyReportToday();
+        ButterKnife.bind(this, root);
 
         return root;
     }
@@ -75,6 +80,24 @@ public class DailyReportFragment extends Fragment implements IDailyReportView {
     public void showError(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
     }
+
+//    @Override
+//    public void onClick(View view) {
+//        new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+//            @Override
+//            public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth) {
+//                myCalendar.set(Calendar.YEAR, year);
+//                myCalendar.set(Calendar.MONTH, month);
+//                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+//
+//                String formatTanggal = "dd-mm-yyyy";
+//                SimpleDateFormat sdf = new SimpleDateFormat(formatTanggal);
+//                showDate.setText(sdf.format(myCalendar.getTime()));
+//            }
+//        },
+//                myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+//                myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+//    }
 
 //    void addData(){
 //        dailyReportList = new ArrayList<>();
