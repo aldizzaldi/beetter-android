@@ -1,6 +1,8 @@
 package com.example.beetter.ui.home;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,10 +35,21 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
         return new HomeViewHolder(view);
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
+//        if(reportProductivities.get(position).getValue().getProductiveValue() > 70){
+//            holder.homeProductivities.setTextColor(R.color.colorGreen);
+//        }
+//        else if(reportProductivities.get(position).getValue().getProductiveValue() > 50){
+//            holder.homeProductivities.setTextColor(R.color.colorYellow);
+//        }
+//        else{
+//            holder.homeProductivities.setTextColor(R.color.colorRed);
+//        }
         holder.homeMemberName.setText(reportProductivities.get(position).getUser().getName());
         holder.homeProductivities.setText(reportProductivities.get(position).getValue().getProductiveValue() + "%");
+        holder.homeProductivities.setTextColor(R.color.colorRed);
     }
 
     @Override

@@ -49,6 +49,7 @@ public class HomeFragment extends Fragment implements IHomeView{
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_main, menu);
         super.onCreateOptionsMenu(menu, inflater);
+        
     }
 
 

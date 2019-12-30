@@ -26,10 +26,13 @@ public class DailyReportPresenter {
     void getDailyReportToday(){
         String token = SharedPrefUtils.getStringSharedPref("token", "");
         int idTeam = SharedPrefUtils.getIntSharedPref("id_team", 0);
-        String date = "2019-11-27";
+        String date = "2019-11-21";
         apiEndPoint.getDailyReport(token, idTeam, date).enqueue(new Callback<GetDailyReportResponse>() {
             @Override
             public void onResponse(Call<GetDailyReportResponse> call, Response<GetDailyReportResponse> response) {
+
+                Log.e("kunam", call.request().toString());
+
                 if(response.isSuccessful()){
                     ArrayList<DailyReport> dailyReports = new ArrayList<>();
                     Log.e("respon berhasil", response.body().toString());

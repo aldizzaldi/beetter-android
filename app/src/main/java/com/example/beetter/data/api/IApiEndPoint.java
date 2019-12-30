@@ -52,7 +52,7 @@ public interface IApiEndPoint {
     @POST("daily-scrum-report/list")
     Call<GetDailyReportResponse> getDailyReport(
             @Header("Authorization") String header,
-            @Field("id_team") int id,
+            @Field("id") int id,
             @Field("date") String date
     );
 
