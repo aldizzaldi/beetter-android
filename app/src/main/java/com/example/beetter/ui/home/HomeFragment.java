@@ -49,7 +49,6 @@ public class HomeFragment extends Fragment implements IHomeView{
 
         presenter = new HomePresenter(this);
         presenter.getListMemberInTeam();
-        presenter.showOverallProductivity();
         return root;
 
     }

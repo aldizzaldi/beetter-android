@@ -8,6 +8,7 @@ import com.example.beetter.model.response.GetTrackingReport;
 import com.example.beetter.model.response.GetUserResponse;
 import com.example.beetter.model.response.LoginResponse;
 import com.example.beetter.model.User;
+import com.example.beetter.model.response.SendPokeResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -70,6 +71,14 @@ public interface IApiEndPoint {
             @Header("Authorization") String header,
             @Field("id_team") int id,
             @Field("date") String date
+    );
+
+    @FormUrlEncoded
+    @POST("poke")
+    Call<SendPokeResponse> sendPoke(
+            @Header("Authorization") String header,
+            @Field("id_team") int idTeam,
+            @Field("id_user") int idUser
     );
 
 }

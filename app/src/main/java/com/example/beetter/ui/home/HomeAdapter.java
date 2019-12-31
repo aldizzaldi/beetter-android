@@ -38,19 +38,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
-//        if(reportProductivities.get(position).getValue().getProductiveValue() > 70){
-//            holder.homeProductivities.setTextColor(R.color.colorGreen);
-//        }
-//        else if(reportProductivities.get(position).getValue().getProductiveValue() > 50){
-//            holder.homeProductivities.setTextColor(R.color.colorYellow);
-//        }
-//        else{
-//            holder.homeProductivities.setTextColor(R.color.colorRed);
-//        }
         holder.homeMemberName.setText(reportProductivities.get(position).getUser().getName());
         holder.homeProductivities.setText(reportProductivities.get(position).getValue().getProductiveValue() + "%");
-        holder.homeProductivities.setTextColor(R.color.design_default_color_primary);
-        holder.homeMemberName.setTextColor(R.color.colorRed);
+        if(reportProductivities.get(position).getValue().getProductiveValue() > 70){
+            holder.homeProductivities.setTextColor(R.color.colorGreen);
+        }
+        else if(reportProductivities.get(position).getValue().getProductiveValue() > 50){
+            holder.homeProductivities.setTextColor(R.color.colorYellow);
+        }
+        else{
+            holder.homeProductivities.setTextColor(R.color.colorRed);
+        }
+//        holder.homeProductivities.setTextColor(R.color.design_default_color_primary);
+//        holder.homeMemberName.setTextColor(R.color.colorRed);
     }
 
     @Override

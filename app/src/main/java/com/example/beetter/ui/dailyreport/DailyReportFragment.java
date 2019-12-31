@@ -49,7 +49,7 @@ public class DailyReportFragment extends Fragment implements IDailyReportView {
         root = inflater.inflate(R.layout.daily_report, container, false);
         presenter = new DailyReportPresenter(this);
         presenter.getDailyReportToday();
-        ButterKnife.bind(this, root);
+//        ButterKnife.bind(this, root);
 
         return root;
     }
