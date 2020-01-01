@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +21,6 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.beetter.DatePicker;
 import com.example.beetter.R;
 import com.example.beetter.model.dummy.DummyDailyAdapter;
 import com.example.beetter.model.dummy.DummyDailyReport;
@@ -39,17 +39,21 @@ public class DailyReportFragment extends Fragment implements IDailyReportView {
     private RecyclerView recyclerView;
     private View root;
 
-    @BindView(R.id.btnDate)
-    Button btnDate;
-    @BindView(R.id.showDate)
+    @BindView(R.id.btnDateDailyReport)
+    ImageButton btnDate;
+    @BindView(R.id.showDateDailyReport)
     TextView showDate;
+
+    Calendar myCalendar;
+    DatePickerDialog datePickerDialog;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.daily_report, container, false);
         presenter = new DailyReportPresenter(this);
         presenter.getDailyReportToday();
-//        ButterKnife.bind(this, root);
+        ButterKnife.bind(this, root);
+        btnDate.setOnClickListener(listener);
 
         return root;
     }
@@ -79,6 +83,24 @@ public class DailyReportFragment extends Fragment implements IDailyReportView {
     public void showError(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
     }
+
+    ImageButton.OnClickListener listener = new ImageButton.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            myCalendar = Calendar.getInstance();
+            int day = myCalendar.get(Calendar.DAY_OF_MONTH);
+            int month = myCalendar.get(Calendar.MONTH);
+            int year = myCalendar.get(Calendar.YEAR);
+
+            datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(android.widget.DatePicker datePicker, int mYear, int mMonth, int mDay) {
+                    showDate.setText(mYear + "-" + mMonth + "-" + mDay);
+                }
+            }, year, month, day);
+            datePickerDialog.show();
+        }
+    };
 
 //    void addData(){
 //        dailyReportList = new ArrayList<>();

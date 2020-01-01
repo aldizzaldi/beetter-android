@@ -31,8 +31,6 @@ public class DailyReportPresenter {
             @Override
             public void onResponse(Call<GetDailyReportResponse> call, Response<GetDailyReportResponse> response) {
 
-                Log.e("kunam", call.request().toString());
-
                 if(response.isSuccessful()){
                     ArrayList<DailyReport> dailyReports = new ArrayList<>();
                     Log.e("respon berhasil", response.body().toString());

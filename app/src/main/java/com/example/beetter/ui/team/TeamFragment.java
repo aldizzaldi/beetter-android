@@ -1,5 +1,6 @@
 package com.example.beetter.ui.team;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,15 +17,23 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.beetter.R;
+import com.example.beetter.SharedPrefUtils;
+import com.example.beetter.ui.listteam.ListTeamActivity;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class TeamFragment extends Fragment {
-    private Button buttonListTeam;
+    private View root;
+    @BindView(R.id.btnGoToAnotherTeam)
+    Button goToAnotherTeam;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.team, container, false);
-        buttonListTeam = (Button) root.findViewById(R.id.btnGoToAnotherTeam);
+        root = inflater.inflate(R.layout.team, container, false);
+        ButterKnife.bind(this, root);
+        goToAnotherTeam.setOnClickListener(listener);
 
         return root;
     }
@@ -41,4 +50,14 @@ public class TeamFragment extends Fragment {
         inflater.inflate(R.menu.menu_main, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
+
+    Button.OnClickListener listener = new Button.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(getActivity(), ListTeamActivity.class);
+            startActivity(intent);
+            SharedPrefUtils.removeSavedPref("id_team");
+            getActivity().finish();
+        }
+    };
 }

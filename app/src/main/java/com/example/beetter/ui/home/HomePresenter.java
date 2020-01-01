@@ -62,9 +62,9 @@ public class HomePresenter {
         });
     }
 
-    void poke(){
+    void poke(int idTeam, int idUser){
 
-        apiEndPoint.sendPoke(token, idTeam, idTeam).enqueue(new Callback<SendPokeResponse>() {
+        apiEndPoint.sendPoke(token, idTeam, idUser).enqueue(new Callback<SendPokeResponse>() {
             @Override
             public void onResponse(Call<SendPokeResponse> call, Response<SendPokeResponse> response) {
                 if(response.isSuccessful()){

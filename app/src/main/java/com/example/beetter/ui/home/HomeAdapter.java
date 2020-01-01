@@ -3,9 +3,11 @@ package com.example.beetter.ui.home;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +23,7 @@ import butterknife.ButterKnife;
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder>{
     private ArrayList<HomeReportProductivity> reportProductivities;
     private final Context context;
+    int idUser;
 
     public HomeAdapter(ArrayList<HomeReportProductivity> reportProductivities, Context context) {
         this.reportProductivities = reportProductivities;
@@ -35,19 +38,23 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
         return new HomeViewHolder(view);
     }
 
-    @SuppressLint("ResourceAsColor")
+//    @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
+        idUser = reportProductivities.get(position).getUser().getId();
         holder.homeMemberName.setText(reportProductivities.get(position).getUser().getName());
         holder.homeProductivities.setText(reportProductivities.get(position).getValue().getProductiveValue() + "%");
         if(reportProductivities.get(position).getValue().getProductiveValue() > 70){
-            holder.homeProductivities.setTextColor(R.color.colorGreen);
+            holder.homeProductivities.setTextColor(context.getResources().getColor(R.color.colorGreen));
+            Log.e("IJO", "tetew - " + reportProductivities.get(position).getUser().getName() + reportProductivities.get(position).getValue().getProductiveValue());
         }
         else if(reportProductivities.get(position).getValue().getProductiveValue() > 50){
-            holder.homeProductivities.setTextColor(R.color.colorYellow);
+            holder.homeProductivities.setTextColor(context.getResources().getColor(R.color.colorYellow));
+            Log.e("KUNING", "tetew - " + reportProductivities.get(position).getUser().getName() + reportProductivities.get(position).getValue().getProductiveValue());
         }
         else{
-            holder.homeProductivities.setTextColor(R.color.colorRed);
+            holder.homeProductivities.setTextColor(context.getResources().getColor(R.color.colorRed));
+            Log.e("MERAH", "tetew - " + reportProductivities.get(position).getUser().getName() + reportProductivities.get(position).getValue().getProductiveValue());
         }
 //        holder.homeProductivities.setTextColor(R.color.design_default_color_primary);
 //        holder.homeMemberName.setTextColor(R.color.colorRed);
@@ -64,6 +71,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
 
         @BindView(R.id.home_percent_productivities)
         TextView homeProductivities;
+
+        @BindView(R.id.rocket)
+        ImageView boost;
 
         public HomeViewHolder(@NonNull View itemView) {
             super(itemView);

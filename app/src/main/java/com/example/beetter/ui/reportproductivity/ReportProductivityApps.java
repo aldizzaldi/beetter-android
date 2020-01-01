@@ -8,12 +8,12 @@ public class ReportProductivityApps {
     @SerializedName("user")
     User user;
 
-    @SerializedName("values")
-    double[] percentProductivities;
+    @SerializedName("value")
+    float[] percentProductivities;
 
     @SerializedName("app")
     Apps apps;
 
     @SerializedName("time_consumed")
-    int timeConsumed;
+    double timeConsumed;
 }

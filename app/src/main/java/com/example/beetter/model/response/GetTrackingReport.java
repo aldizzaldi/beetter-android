@@ -10,16 +10,8 @@ public class GetTrackingReport {
     @SerializedName("success")
     Boolean success;
 
-    public ArrayList<ReportProductivityApps> getReportProductivitiesApps() {
-        return reportProductivitiesApps;
-    }
-
-    public void setReportProductivitiesApps(ArrayList<ReportProductivityApps> reportProductivitiesApps) {
-        this.reportProductivitiesApps = reportProductivitiesApps;
-    }
-
     @SerializedName("data")
-    ArrayList<ReportProductivityApps> reportProductivitiesApps;
+    ArrayList<ReportProductivityApps> reportProductivityApps;
 
     public Boolean getSuccess() {
         return success;
@@ -29,4 +21,11 @@ public class GetTrackingReport {
         this.success = success;
     }
 
+    public ArrayList<ReportProductivityApps> getReportProductivityApps() {
+        return reportProductivityApps;
+    }
+
+    public void setReportProductivityApps(ArrayList<ReportProductivityApps> reportProductivityApps) {
+        this.reportProductivityApps = reportProductivityApps;
+    }
 }

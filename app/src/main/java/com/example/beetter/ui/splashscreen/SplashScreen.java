@@ -31,6 +31,10 @@ public class SplashScreen extends AppCompatActivity implements ISplashScreenVIew
                     Intent intent = new Intent(SplashScreen.this, LoginActivity.class);
                     SplashScreen.this.startActivity(intent);
                 }
+                else if(token.equalsIgnoreCase(SharedPrefUtils.getStringSharedPref("token", "null")) && SharedPrefUtils.getIntSharedPref("id_team", 0) == 0 ){
+                    Intent intent = new Intent(SplashScreen.this, ListTeamActivity.class);
+                    SplashScreen.this.startActivity(intent);
+                }
                 else{
                     Intent intent = new Intent(SplashScreen.this, NavigationActivity.class);
                     SplashScreen.this.startActivity(intent);

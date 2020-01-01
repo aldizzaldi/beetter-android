@@ -101,4 +101,9 @@ public class HomeFragment extends Fragment implements IHomeView{
     public void showOverallProductivitiesTeam(double value) {
         overallProductivity.setText(value + "%");
     }
+
+    @Override
+    public void sendPoke(int idTeam, int idUser) {
+        presenter.poke(idTeam, idUser);
+    }
 }
