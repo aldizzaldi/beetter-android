@@ -56,25 +56,13 @@
                 android:id="@+id/home_percent_productivities"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="81dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="34dp"
+                android:layout_marginEnd="77dp"
                 android:layout_marginBottom="25dp"
                 android:text="80% productives"
                 android:textColor="#37C72D"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/view5"
-                app:layout_constraintEnd_toStartOf="@+id/rocket"
-                app:layout_constraintStart_toEndOf="@+id/home_member_name"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/rocket"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/rocket"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

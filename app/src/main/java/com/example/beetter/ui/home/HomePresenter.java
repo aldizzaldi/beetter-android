@@ -8,7 +8,12 @@ import com.example.beetter.data.api.IApiEndPoint;
 import com.example.beetter.model.response.GetListMemberInTeamResponse;
 import com.example.beetter.model.response.SendPokeResponse;
 
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,7 +36,11 @@ public class HomePresenter {
     void getListMemberInTeam(){
         token = SharedPrefUtils.getStringSharedPref("token", "");
         idTeam = SharedPrefUtils.getIntSharedPref("id_team", 0);
-        String date = "2019-11-27";
+//        Date currentTime = Calendar.getInstance().getTime();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        String date = dateFormat.format(new Date());
+//        Log.e("tanggal", dateFormat.format(new Date()));
+//        String date = "2020-01-01";
 
         apiEndPoint.getListMemberInTeam(token,idTeam,date).enqueue(new Callback<GetListMemberInTeamResponse>() {
             @Override
@@ -46,9 +55,9 @@ public class HomePresenter {
                     }
                     view.getTeamMember(reportProductivities);
                     overall = overall/size;
-                    Math.round(overall);
+                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-                    view.showOverallProductivitiesTeam(overall);
+                    view.showOverallProductivitiesTeam(decimalFormat.format(overall));
                 }
                 else{
                     Log.e("gagal masuk", "sad");

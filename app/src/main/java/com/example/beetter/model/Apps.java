@@ -17,6 +17,10 @@ public class Apps {
         return productives;
     }
 
+    public App getProductivesSatuan(int i) {
+        return productives[i];
+    }
+
     public void setProductives(App[] productives) {
         this.productives = productives;
     }
@@ -25,12 +29,21 @@ public class Apps {
         return netral;
     }
 
+    public App getNetralSatuan(int i) {
+        return netral[i];
+    }
+
+
     public void setNetral(App[] netral) {
         this.netral = netral;
     }
 
     public App[] getUnproductives() {
         return unproductives;
+    }
+
+    public App getUnproductives(int i) {
+        return unproductives[i];
     }
 
     public void setUnproductives(App[] unproductives) {

@@ -5,6 +5,6 @@ import java.util.ArrayList;
 public interface IHomeView {
     void getTeamMember(ArrayList<HomeReportProductivity> reportProductivities);
     void showError(String message);
-    void showOverallProductivitiesTeam(double value);
+    void showOverallProductivitiesTeam(String value);
     void sendPoke(int idTeam, int idUser);
 }

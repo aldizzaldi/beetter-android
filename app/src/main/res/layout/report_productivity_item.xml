@@ -193,7 +193,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView4"
+                        android:id="@+id/recyclerViewProductive"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="16dp"
@@ -236,7 +236,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView5"
+                        android:id="@+id/recyclerViewNotProductive"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="16dp"
@@ -257,7 +257,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="200dp"
                 app:cardBackgroundColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardView6"
@@ -274,22 +276,22 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         android:text="Neutral Apps"
-                        android:textSize="10sp"
+                        android:textSize="13sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView6"
+                        android:id="@+id/recyclerViewNeutral"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
+                        android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/categoryneutral"
-                        tools:listitem="@layout/list_app_item"
-                        android:orientation="vertical"/>
+                        tools:listitem="@layout/list_app_item" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>

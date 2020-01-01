@@ -74,6 +74,7 @@ public class HomeFragment extends Fragment implements IHomeView{
             this.startActivity(intent);
         }
         else {
+            SharedPrefUtils.removeSavedPref("id_team");
             SharedPrefUtils.removeSavedPref("token");
             Intent intent = new Intent(getActivity(), SplashScreen.class);
             this.startActivity(intent);
@@ -98,7 +99,7 @@ public class HomeFragment extends Fragment implements IHomeView{
     }
 
     @Override
-    public void showOverallProductivitiesTeam(double value) {
+    public void showOverallProductivitiesTeam(String value) {
         overallProductivity.setText(value + "%");
     }
 

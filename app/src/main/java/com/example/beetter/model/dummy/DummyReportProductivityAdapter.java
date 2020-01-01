@@ -46,8 +46,8 @@ public class DummyReportProductivityAdapter extends RecyclerView.Adapter<DummyRe
 
         public DummyProductivitiesViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtNamaApps = itemView.findViewById(R.id.textView7);
-            txtJam = itemView.findViewById(R.id.textView9);
+//            txtNamaApps = itemView.findViewById(R.id.textView7);
+//            txtJam = itemView.findViewById(R.id.textView9);
 
         }
     }
