@@ -96,7 +96,6 @@ public class ReportProductivityFragment extends Fragment implements IReportProdu
     public void getReportProductivity(ArrayList<ReportProductivityApps> reportProductivityApps) {
         recyclerViewHorizontal = (RecyclerView) root.findViewById(R.id.recyclerViewReportProductivity);
         reportProductivityAdapter = new ReportProductivityAdapter(reportProductivityApps, getContext());
-//        Log.e("Report", reportProductivityApps.size() + "!");
         recyclerViewHorizontal.setAdapter(reportProductivityAdapter);
         recyclerViewHorizontal.setLayoutManager(new LinearLayoutManager(getContext()));
     }
@@ -117,7 +116,8 @@ public class ReportProductivityFragment extends Fragment implements IReportProdu
             datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(android.widget.DatePicker datePicker, int mYear, int mMonth, int mDay) {
-                    showDate.setText(mYear + "-" + mMonth + "-" + mDay);
+                    showDate.setText(mYear + "-" + (mMonth + 1) % 12 + "-" + mDay);
+                    presenter.getReportProductivity(showDate.getText().toString());
                 }
             }, year, month, day);
             datePickerDialog.show();

@@ -116,13 +116,15 @@ public class DailyReportFragment extends Fragment implements IDailyReportView {
         public void onClick(View view) {
             myCalendar = Calendar.getInstance();
             int day = myCalendar.get(Calendar.DAY_OF_MONTH);
-            int month = (myCalendar.get(Calendar.MONTH) + 1) % 12;
+            int month = myCalendar.get(Calendar.MONTH);
+            Log.e("kontlo", month + "");
             int year = myCalendar.get(Calendar.YEAR);
 
             datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(android.widget.DatePicker datePicker, int mYear, int mMonth, int mDay) {
-                    showDate.setText(mYear + "-" + mMonth + "-" + mDay);
+                    showDate.setText(mYear + "-" + (mMonth + 1) % 12 + "-" + mDay);
+                    presenter.getDailyReportToday(showDate.getText().toString());
                 }
             }, year, month , day);
             datePickerDialog.show();

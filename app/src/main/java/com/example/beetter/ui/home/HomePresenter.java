@@ -39,7 +39,7 @@ public class HomePresenter {
 //        Date currentTime = Calendar.getInstance().getTime();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         String date = dateFormat.format(new Date());
-//        Log.e("tanggal", dateFormat.format(new Date()));
+        Log.e("tanggal", dateFormat.format(new Date()));
 //        String date = "2020-01-01";
 
         apiEndPoint.getListMemberInTeam(token,idTeam,date).enqueue(new Callback<GetListMemberInTeamResponse>() {

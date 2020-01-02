@@ -31,7 +31,6 @@ public class ReportProductivityPresenter {
             public void onResponse(Call<GetTrackingReport> call, Response<GetTrackingReport> response) {
                 if(response.isSuccessful()){
                     ArrayList<ReportProductivityApps> reportProductivityApps = new ArrayList<>();
-                    Log.e("jancok", "masuk cok");
                     int size = response.body().getReportProductivityApps().size();
                     for (int i = 0; i < size; i++){
                         reportProductivityApps.add(response.body().getReportProductivityApps().get(i));
@@ -39,13 +38,13 @@ public class ReportProductivityPresenter {
                     view.getReportProductivity(reportProductivityApps);
                 }
                 else {
-                    Log.e("jancok", "gamasuk cok");
+                    Log.e("error", "gamasuk");
                 }
             }
 
             @Override
             public void onFailure(Call<GetTrackingReport> call, Throwable t) {
-                Log.e("jancok", t.getCause() + "");
+                Log.e("error", t.getCause() + "");
             }
         });
     }

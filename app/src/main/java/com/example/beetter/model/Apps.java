@@ -10,7 +10,7 @@ public class Apps {
     @SerializedName("netral")
     App[] netral;
 
-    @SerializedName("not_prodductive")
+    @SerializedName("not_productive")
     App[] unproductives;
 
     public App[] getProductives() {
@@ -42,7 +42,7 @@ public class Apps {
         return unproductives;
     }
 
-    public App getUnproductives(int i) {
+    public App getUnproductivesSatuan(int i) {
         return unproductives[i];
     }
 
