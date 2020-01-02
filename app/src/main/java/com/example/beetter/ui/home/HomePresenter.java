@@ -47,9 +47,9 @@ public class HomePresenter {
             public void onResponse(Call<GetListMemberInTeamResponse> call, Response<GetListMemberInTeamResponse> response) {
                 if(response.isSuccessful()){
                     size = response.body().getReportProductivities().size();
-                    Log.e("ukuran", "" + size);
+//                    Log.e("ukuran", "" + size);
                     for(int i =0; i < size; i++){
-                        Log.e("Berhasil masuk", "yey");
+//                        Log.e("Berhasil masuk", "yey");
                         reportProductivities.add(response.body().getReportProductivities().get(i));
                         overall =  overall + response.body().getReportProductivities().get(i).getValue().getProductiveValue();
                     }

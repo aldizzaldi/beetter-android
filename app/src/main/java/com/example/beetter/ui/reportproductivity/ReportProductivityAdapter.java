@@ -14,9 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.beetter.R;
 import com.example.beetter.model.App;
 import com.example.beetter.ui.reportproductivity.adapter.RecyclerViewNeutralAdapter;
+import com.example.beetter.ui.reportproductivity.adapter.RecyclerViewNotProductiveAdapter;
+import com.example.beetter.ui.reportproductivity.adapter.RecyclerViewProductiveAdapter;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,29 +50,53 @@ public class ReportProductivityAdapter extends RecyclerView.Adapter<ReportProduc
 
     @Override
     public void onBindViewHolder(@NonNull ReportProductivityViewHolder holder, int position) {
+        arrayListProductive.clear();
+        arrayListNeutral.clear();
         holder.name.setText(appsArrayList.get(position).user.getName());
-        holder.productive.setText(appsArrayList.get(position).percentProductivities[0] + "%");
-        holder.nonProductive.setText(appsArrayList.get(position).percentProductivities[2] + "%");
-        holder.neutral.setText(appsArrayList.get(position).percentProductivities[1] + "%");
-//        int size1 = appsArrayList.get(position).getApps().getProductives().length;
+        float productive = appsArrayList.get(position).percentProductivities[0];
+        float notProductive = appsArrayList.get(position).percentProductivities[2];
+        float neutral = appsArrayList.get(position).percentProductivities[1];
+        holder.productive.setText( productive+ "%");
+        holder.nonProductive.setText(notProductive + "%");
+        holder.neutral.setText(neutral + "%");
+        int size1 = appsArrayList.get(position).getApps().getProductives().length;
 //        int size2 = appsArrayList.get(position).getApps().getUnproductives().length;
         int size3 = appsArrayList.get(position).getApps().getNetral().length;
 
-//        for(int i = 0; i < size1; i++){
-//            arrayListProductive.add(appsArrayList.get(position).getApps().getProductivesSatuan(i));
-//        }
-//
-//        for(int i = 0; i < size2; i++){
-//            arrayListProductive.add(appsArrayList.get(position).getApps().getUnproductives(i));
+        holder.piechart.setUsePercentValues(true);
+        List<PieEntry> pieChartModels = new ArrayList<>();
+        pieChartModels.add(new PieEntry(productive, "Productive"));
+        pieChartModels.add(new PieEntry(notProductive, "Not Productive"));
+        pieChartModels.add(new PieEntry(neutral, "Neutral"));
+
+//        PieDataSet pieDataSet = new PieDataSet(pieChartModels, "Keproduktivitasan");
+//        PieData pieData = new PieData(pieDataSet);
+//        holder.piechart.setData(pieData);
+
+        for(int i = 0; i < size1; i++){
+            arrayListProductive.add(appsArrayList.get(position).getApps().getProductivesSatuan(i));
+        }
+        RecyclerViewProductiveAdapter recyclerViewProductiveAdapter = new RecyclerViewProductiveAdapter(arrayListProductive, context);
+        holder.recyclerViewProductive.setAdapter(recyclerViewProductiveAdapter);
+        holder.recyclerViewProductive.setLayoutManager(new LinearLayoutManager(context));
+
+//        for(int i = 0; i < 1; i++){
+//            arrayListNotProductive.add(appsArrayList.get(position).getApps().getUnproductives(i));
 //        }
 
         for(int i = 0; i < size3; i++){
-            arrayListProductive.add(appsArrayList.get(position).getApps().getNetralSatuan(i));
+            arrayListNeutral.add(appsArrayList.get(position).getApps().getNetralSatuan(i));
             Log.e("inilo" + i + " " + appsArrayList.get(position).getUser().getName(), appsArrayList.get(position).getApps().getNetralSatuan(i) + "");
         }
+
         RecyclerViewNeutralAdapter  RecyclerViewNeutralAdapter = new RecyclerViewNeutralAdapter(arrayListNeutral, context);
         holder.recyclerViewNeutral.setAdapter(RecyclerViewNeutralAdapter);
         holder.recyclerViewNeutral.setLayoutManager(new LinearLayoutManager(context));
+
+
+//        RecyclerViewNotProductiveAdapter recyclerViewNotProductiveAdapter = new RecyclerViewNotProductiveAdapter(arrayListNotProductive, context);
+//        holder.recyclerViewNotProductivee.setAdapter(recyclerViewNotProductiveAdapter);
+//        holder.recyclerViewNotProductivee.setLayoutManager(new LinearLayoutManager(context));
     }
 
     @Override

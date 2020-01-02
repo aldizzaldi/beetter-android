@@ -21,10 +21,10 @@ public class ReportProductivityPresenter {
         this.view = view;
     }
 
-    void getReportProductivity(){
+    void getReportProductivity(String date){
         String token = SharedPrefUtils.getStringSharedPref("token", "");
         int idTeam = SharedPrefUtils.getIntSharedPref("id_team", 0);
-        String date = "2020-01-1";
+//        String date = "2020-01-1";
 
         apiEndPoint.getTrackingReport(token, date, idTeam).enqueue(new Callback<GetTrackingReport>() {
             @Override

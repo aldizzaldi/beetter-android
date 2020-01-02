@@ -43,18 +43,18 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
         idUser = reportProductivities.get(position).getUser().getId();
         holder.homeMemberName.setText(reportProductivities.get(position).getUser().getName());
-        holder.homeProductivities.setText(reportProductivities.get(position).getValue().getProductiveValue() + "%" + " Productives");
+        holder.homeProductivities.setText(reportProductivities.get(position).getValue().getProductiveValue() + "%" + " Productive");
         if(reportProductivities.get(position).getValue().getProductiveValue() > 70){
             holder.homeProductivities.setTextColor(context.getResources().getColor(R.color.colorGreen));
-            Log.e("IJO", "tetew - " + reportProductivities.get(position).getUser().getName() + reportProductivities.get(position).getValue().getProductiveValue());
+//            Log.e("IJO", "tetew - " + reportProductivities.get(position).getUser().getName() + reportProductivities.get(position).getValue().getProductiveValue());
         }
-        else if(reportProductivities.get(position).getValue().getProductiveValue() > 50){
+        else if(reportProductivities.get(position).getValue().getProductiveValue() > 40){
             holder.homeProductivities.setTextColor(context.getResources().getColor(R.color.colorYellow));
-            Log.e("KUNING", "tetew - " + reportProductivities.get(position).getUser().getName() + reportProductivities.get(position).getValue().getProductiveValue());
+//            Log.e("KUNING", "tetew - " + reportProductivities.get(position).getUser().getName() + reportProductivities.get(position).getValue().getProductiveValue());
         }
         else{
             holder.homeProductivities.setTextColor(context.getResources().getColor(R.color.colorRed));
-            Log.e("MERAH", "tetew - " + reportProductivities.get(position).getUser().getName() + reportProductivities.get(position).getValue().getProductiveValue());
+//            Log.e("MERAH", "tetew - " + reportProductivities.get(position).getUser().getName() + reportProductivities.get(position).getValue().getProductiveValue());
         }
 //        holder.homeProductivities.setTextColor(R.color.design_default_color_primary);
 //        holder.homeMemberName.setTextColor(R.color.colorRed);

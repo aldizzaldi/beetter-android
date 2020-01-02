@@ -23,10 +23,10 @@ public class DailyReportPresenter {
         this.view = view;
     }
 
-    void getDailyReportToday(){
+    void getDailyReportToday(String date){
         String token = SharedPrefUtils.getStringSharedPref("token", "");
         int idTeam = SharedPrefUtils.getIntSharedPref("id_team", 0);
-        String date = "2019-11-21";
+//        String date = "2019-11-21";
         apiEndPoint.getDailyReport(token, idTeam, date).enqueue(new Callback<GetDailyReportResponse>() {
             @Override
             public void onResponse(Call<GetDailyReportResponse> call, Response<GetDailyReportResponse> response) {

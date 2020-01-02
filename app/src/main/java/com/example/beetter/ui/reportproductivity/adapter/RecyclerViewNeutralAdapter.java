@@ -42,7 +42,7 @@ public class RecyclerViewNeutralAdapter extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public int getItemCount() {
-        return 0;
+        return (arrayList != null) ? arrayList.size() : 0;
     }
 
     public class RecyclerViewNeutraViewHolder extends RecyclerView.ViewHolder{

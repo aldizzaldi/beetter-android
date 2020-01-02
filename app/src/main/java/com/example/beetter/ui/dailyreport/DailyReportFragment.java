@@ -1,11 +1,13 @@
 package com.example.beetter.ui.dailyreport;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -22,12 +24,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beetter.R;
+import com.example.beetter.SharedPrefUtils;
 import com.example.beetter.model.dummy.DummyDailyAdapter;
 import com.example.beetter.model.dummy.DummyDailyReport;
+import com.example.beetter.ui.profile.ProfileActivity;
+import com.example.beetter.ui.splashscreen.SplashScreen;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,9 +58,11 @@ public class DailyReportFragment extends Fragment implements IDailyReportView {
                              ViewGroup container, Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.daily_report, container, false);
         presenter = new DailyReportPresenter(this);
-        presenter.getDailyReportToday();
         ButterKnife.bind(this, root);
         btnDate.setOnClickListener(listener);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        showDate.setText(dateFormat.format(new Date()));
+        presenter.getDailyReportToday(showDate.getText().toString());
 
         return root;
     }
@@ -71,10 +80,28 @@ public class DailyReportFragment extends Fragment implements IDailyReportView {
     }
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.profile){
+            Intent intent = new Intent(getActivity(), ProfileActivity.class);
+            this.startActivity(intent);
+        }
+        else {
+            SharedPrefUtils.removeSavedPref("id_team");
+            SharedPrefUtils.removeSavedPref("token");
+            Intent intent = new Intent(getActivity(), SplashScreen.class);
+            this.startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void getDailyReport(ArrayList<DailyReport> dailyReports) {
         recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewDailyReport);
         dailyReportAdapter = new DailyReportAdapter(dailyReports, getContext());
-        Log.e("daily", dailyReports.size() + "!");
+//        Log.e("daily", dailyReports.size() + "!");
         recyclerView.setAdapter(dailyReportAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
@@ -89,7 +116,7 @@ public class DailyReportFragment extends Fragment implements IDailyReportView {
         public void onClick(View view) {
             myCalendar = Calendar.getInstance();
             int day = myCalendar.get(Calendar.DAY_OF_MONTH);
-            int month = myCalendar.get(Calendar.MONTH);
+            int month = (myCalendar.get(Calendar.MONTH) + 1) % 12;
             int year = myCalendar.get(Calendar.YEAR);
 
             datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
@@ -97,7 +124,7 @@ public class DailyReportFragment extends Fragment implements IDailyReportView {
                 public void onDateSet(android.widget.DatePicker datePicker, int mYear, int mMonth, int mDay) {
                     showDate.setText(mYear + "-" + mMonth + "-" + mDay);
                 }
-            }, year, month, day);
+            }, year, month , day);
             datePickerDialog.show();
         }
     };
