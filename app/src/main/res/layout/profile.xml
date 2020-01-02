@@ -21,18 +21,6 @@
             android:layout_height="match_parent">
 
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="33dp"
-                android:layout_height="33dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:background="@android:drawable/ic_menu_close_clear_cancel"
-                android:textAlignment="center"
-                android:textSize="10sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <View
                 android:id="@+id/cover"
                 android:layout_width="match_parent"
